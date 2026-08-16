@@ -4,1444 +4,869 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CNC-Hub | UK Manufacturing Made Simple</title>
+<title>CNC-Hub | UK CNC Manufacturing Exchange</title>
 
 <style>
 
 :root {
-    --dark: #0b1220;
-    --dark2: #111827;
-    --orange: #f59e0b;
-    --light: #f8fafc;
-    --white: #ffffff;
-    --text: #172033;
-    --muted: #64748b;
-    --border: #e2e8f0;
+    --navy:#0b1220;
+    --navy2:#111827;
+    --orange:#f59e0b;
+    --orange2:#fbbf24;
+    --bg:#f5f7fa;
+    --white:#ffffff;
+    --text:#172033;
+    --muted:#64748b;
+    --border:#e2e8f0;
+    --green:#16a34a;
+    --blue:#2563eb;
+    --red:#dc2626;
+    --shadow:0 8px 30px rgba(15,23,42,.07);
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--text);
-    background: var(--light);
-    line-height: 1.6;
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
 }
 
-/* NAVIGATION */
+button,
+input,
+select,
+textarea {
+    font-family:inherit;
+}
+
+button {
+    cursor:pointer;
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 nav {
-    height: 74px;
-    background: white;
-    border-bottom: 1px solid var(--border);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 6%;
-
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    height:74px;
+    background:white;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: 900;
-    letter-spacing: -1px;
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-1.5px;
+    cursor:pointer;
 }
 
 .logo span {
-    color: var(--orange);
+    color:var(--orange);
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 26px;
+    display:flex;
+    align-items:center;
+    gap:24px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #334155;
-    font-size: 14px;
-    font-weight: 700;
+    text-decoration:none;
+    color:#334155;
+    font-size:14px;
+    font-weight:700;
 }
 
-/* BUTTONS */
+.nav-actions {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.mobile-menu {
+    display:none;
+    border:0;
+    background:none;
+    font-size:26px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
 
 .btn {
-    display: inline-block;
-    padding: 14px 21px;
-    border-radius: 7px;
-    text-decoration: none;
-    font-weight: 800;
-    border: none;
-    cursor: pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    padding:12px 19px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:800;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.btn:hover {
+    transform:translateY(-1px);
 }
 
 .btn-primary {
-    background: var(--orange);
-    color: #111827;
+    background:var(--orange);
+    color:#111827;
+}
+
+.btn-primary:hover {
+    background:var(--orange2);
 }
 
 .btn-dark {
-    background: var(--dark);
-    color: white;
+    background:var(--navy);
+    color:white;
 }
 
 .btn-outline {
-    border: 1px solid #cbd5e1;
-    color: #0f172a;
-    background: white;
+    background:white;
+    border-color:#cbd5e1;
+    color:#0f172a;
 }
 
-/* HERO */
+.btn-small {
+    padding:8px 13px;
+    font-size:13px;
+}
+
+.btn-danger {
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero {
-    background: var(--dark);
-    color: white;
-    padding: 105px 6% 95px;
-    position: relative;
-    overflow: hidden;
+    background:var(--navy);
+    color:white;
+    padding:90px 5% 95px;
+    position:relative;
+    overflow:hidden;
 }
 
 .hero-content {
-    max-width: 1150px;
-    margin: auto;
-    position: relative;
-    z-index: 2;
+    max-width:1180px;
+    margin:auto;
+    position:relative;
+    z-index:2;
 }
 
 .kicker {
-    color: var(--orange);
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    color:var(--orange);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:900;
+    font-size:13px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 7vw, 80px);
-    line-height: 0.98;
-    letter-spacing: -4px;
-    max-width: 850px;
-    margin: 18px 0 25px;
+    font-size:clamp(45px,6vw,76px);
+    line-height:.98;
+    letter-spacing:-4px;
+    max-width:850px;
+    margin:18px 0 25px;
 }
 
 .hero p {
-    max-width: 720px;
-    font-size: 20px;
-    color: #cbd5e1;
+    max-width:720px;
+    font-size:20px;
+    color:#cbd5e1;
 }
 
 .hero-buttons {
-    margin-top: 35px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:32px;
 }
 
-/* DECORATION */
+.hero-stats {
+    display:grid;
+    grid-template-columns:repeat(3,180px);
+    gap:15px;
+    margin-top:60px;
+}
+
+.hero-stat {
+    border-left:2px solid var(--orange);
+    padding-left:15px;
+}
+
+.hero-stat strong {
+    display:block;
+    font-size:27px;
+}
+
+.hero-stat span {
+    color:#94a3b8;
+    font-size:13px;
+}
 
 .hero-circle {
-    position: absolute;
-    width: 550px;
-    height: 550px;
-    border: 1px solid #334155;
-    border-radius: 50%;
-    right: -200px;
-    top: -180px;
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid #334155;
+    border-radius:50%;
+    right:-240px;
+    top:-170px;
 }
 
-.hero-circle::before {
-    content: "";
-    position: absolute;
-    width: 380px;
-    height: 380px;
-    border: 1px solid #334155;
-    border-radius: 50%;
-    left: 85px;
-    top: 85px;
+.hero-circle:before {
+    content:"";
+    position:absolute;
+    width:410px;
+    height:410px;
+    border:1px solid #334155;
+    border-radius:50%;
+    left:95px;
+    top:95px;
 }
 
-/* SECTIONS */
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 .section {
-    max-width: 1150px;
-    margin: auto;
-    padding: 80px 6%;
+    max-width:1180px;
+    margin:auto;
+    padding:80px 5%;
+}
+
+.band {
+    background:white;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+}
+
+.section-title {
+    max-width:720px;
 }
 
 .section h2 {
-    font-size: 40px;
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-    margin-bottom: 10px;
+    font-size:40px;
+    line-height:1.1;
+    letter-spacing:-1.5px;
+    margin:0 0 10px;
 }
 
 .lead {
-    max-width: 730px;
-    font-size: 18px;
-    color: var(--muted);
+    color:var(--muted);
+    font-size:18px;
 }
 
-/* CARDS */
+/* =====================================================
+   CARDS
+===================================================== */
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-top: 35px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:35px;
 }
 
 .card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px;
-    box-shadow: 0 6px 20px rgba(15,23,42,0.04);
+    background:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:25px;
+    box-shadow:var(--shadow);
 }
 
 .card h3 {
-    margin-top: 0;
-    font-size: 20px;
+    margin-top:0;
 }
 
 .card p {
-    color: var(--muted);
+    color:var(--muted);
 }
 
 .icon {
-    font-size: 30px;
-    margin-bottom: 12px;
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    background:#fff7e6;
+    color:#a16207;
+    border-radius:10px;
+    font-size:22px;
+    margin-bottom:15px;
 }
 
-/* BAND */
+/* =====================================================
+   MARKETPLACE PREVIEW
+===================================================== */
 
-.band {
-    background: white;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+.job-list {
+    margin-top:30px;
+    display:grid;
+    gap:14px;
 }
 
-/* HOW IT WORKS */
-
-.steps {
-    margin-top: 35px;
+.job-card {
+    background:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:22px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+    box-shadow:0 4px 15px rgba(15,23,42,.04);
 }
 
-.step {
-    display: flex;
-    gap: 18px;
-    margin: 24px 0;
+.job-main h3 {
+    margin:0 0 5px;
 }
 
-.number {
-    min-width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--orange);
-    display: grid;
-    place-items: center;
-    font-weight: 900;
+.job-meta {
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:10px;
 }
 
-.step strong {
-    font-size: 18px;
+.tag {
+    background:#eef2f7;
+    color:#475569;
+    border-radius:20px;
+    padding:5px 10px;
+    font-size:12px;
+    font-weight:700;
 }
 
-/* QUOTE */
-
-.quote-box {
-    background: #eef2f7;
-    border-radius: 14px;
-    padding: 35px;
-    margin-top: 30px;
+.tag.orange {
+    background:#fff4d6;
+    color:#92400e;
 }
 
-.quote-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+.tag.green {
+    background:#dcfce7;
+    color:#166534;
 }
 
-.quote-form input,
-.quote-form select,
-.quote-form textarea {
-
-    width: 100%;
-    padding: 14px;
-
-    border: 1px solid #cbd5e1;
-    border-radius: 7px;
-
-    background: white;
-
-    font-family: inherit;
-    font-size: 15px;
+.job-right {
+    text-align:right;
+    min-width:150px;
 }
 
-.full {
-    grid-column: 1 / -1;
+.job-right strong {
+    display:block;
+    font-size:18px;
 }
 
-/* SUPPLIER */
-
-.supplier-box {
-    background: var(--dark);
-    color: white;
-    padding: 45px;
-    border-radius: 15px;
+.job-right span {
+    color:var(--muted);
+    font-size:13px;
 }
 
-.supplier-box p {
-    color: #cbd5e1;
+/* =====================================================
+   PORTAL
+===================================================== */
+
+.portal {
+    display:none;
+    min-height:calc(100vh - 74px);
+    background:#f1f5f9;
 }
 
-/* CONFIDENTIALITY */
-
-.confidential {
-    background: #0f172a;
-    color: white;
+.portal.active {
+    display:block;
 }
 
-.confidential .lead {
-    color: #cbd5e1;
+.portal-header {
+    background:white;
+    border-bottom:1px solid var(--border);
+    padding:20px 4%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-/* FOOTER */
+.portal-header h1 {
+    margin:0;
+    font-size:25px;
+}
+
+.user-chip {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.avatar {
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:var(--navy);
+    color:white;
+    display:grid;
+    place-items:center;
+    font-weight:900;
+}
+
+.portal-layout {
+    display:grid;
+    grid-template-columns:235px 1fr;
+    min-height:calc(100vh - 145px);
+}
+
+.sidebar {
+    background:var(--navy);
+    color:white;
+    padding:25px 15px;
+}
+
+.sidebar-title {
+    color:#64748b;
+    text-transform:uppercase;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+    padding:10px 12px;
+}
+
+.sidebar button {
+    width:100%;
+    text-align:left;
+    background:transparent;
+    border:0;
+    color:#cbd5e1;
+    padding:12px;
+    border-radius:7px;
+    font-weight:700;
+    margin-bottom:3px;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+    background:#1e293b;
+    color:white;
+}
+
+.sidebar .orange {
+    background:var(--orange);
+    color:#111827;
+    margin-bottom:20px;
+}
+
+.portal-content {
+    padding:30px;
+    max-width:1400px;
+    width:100%;
+}
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.dashboard-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin:20px 0 30px;
+}
+
+.stat-card {
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:20px;
+}
+
+.stat-card span {
+    display:block;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.stat-card strong {
+    font-size:30px;
+    display:block;
+    margin-top:5px;
+}
+
+.dashboard-two {
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+.portal-card {
+    background:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:22px;
+    margin-bottom:20px;
+}
+
+.portal-card h2 {
+    margin-top:0;
+    font-size:20px;
+}
+
+.table {
+    width:100%;
+    border-collapse:collapse;
+}
+
+.table th {
+    color:#64748b;
+    font-size:12px;
+    text-transform:uppercase;
+    text-align:left;
+    padding:12px;
+    border-bottom:1px solid var(--border);
+}
+
+.table td {
+    padding:15px 12px;
+    border-bottom:1px solid var(--border);
+    font-size:14px;
+}
+
+.status {
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:800;
+}
+
+.status.green {
+    background:#dcfce7;
+    color:#166534;
+}
+
+.status.orange {
+    background:#fef3c7;
+    color:#92400e;
+}
+
+.status.blue {
+    background:#dbeafe;
+    color:#1e40af;
+}
+
+.status.grey {
+    background:#e2e8f0;
+    color:#475569;
+}
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+.form-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.form-group {
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.form-group.full {
+    grid-column:1/-1;
+}
+
+.form-group label {
+    font-size:13px;
+    font-weight:800;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding:13px;
+    border:1px solid #cbd5e1;
+    border-radius:7px;
+    background:white;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color:var(--orange);
+}
+
+.file-upload {
+    border:2px dashed #cbd5e1;
+    padding:25px;
+    text-align:center;
+    border-radius:10px;
+    background:#f8fafc;
+}
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.login-overlay {
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(2,6,23,.72);
+    z-index:2000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.login-overlay.active {
+    display:flex;
+}
+
+.login-box {
+    background:white;
+    width:100%;
+    max-width:430px;
+    border-radius:15px;
+    padding:35px;
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+.login-box h2 {
+    margin-top:0;
+}
+
+.login-tabs {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    margin:20px 0;
+    background:#f1f5f9;
+    border-radius:7px;
+    padding:4px;
+}
+
+.login-tabs button {
+    border:0;
+    background:transparent;
+    padding:10px;
+    border-radius:5px;
+    font-weight:800;
+}
+
+.login-tabs button.active {
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.demo-note {
+    background:#fff7e6;
+    border:1px solid #fde68a;
+    padding:12px;
+    border-radius:7px;
+    font-size:13px;
+    margin-top:15px;
+}
+
+.close-login {
+    float:right;
+    border:0;
+    background:none;
+    font-size:22px;
+}
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile-header {
+    background:var(--navy);
+    color:white;
+    border-radius:12px;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.profile-name {
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.profile-large-avatar {
+    width:70px;
+    height:70px;
+    border-radius:12px;
+    background:var(--orange);
+    color:#111827;
+    display:grid;
+    place-items:center;
+    font-size:26px;
+    font-weight:900;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:2500;
+    background:rgba(2,6,23,.65);
+    padding:20px;
+    overflow:auto;
+}
+
+.modal.active {
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.modal-box {
+    background:white;
+    max-width:750px;
+    width:100%;
+    margin:50px auto;
+    border-radius:14px;
+    padding:30px;
+}
+
+.modal-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.modal-close {
+    border:0;
+    background:none;
+    font-size:25px;
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:var(--navy);
+    color:white;
+    padding:15px 20px;
+    border-radius:8px;
+    box-shadow:var(--shadow);
+    display:none;
+    z-index:5000;
+}
+
+.toast.show {
+    display:block;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer {
-    background: #070c15;
-    color: #cbd5e1;
-    padding: 45px 6%;
+    background:#070c15;
+    color:#cbd5e1;
+    padding:45px 5%;
 }
 
 .footer-content {
-    max-width: 1150px;
-    margin: auto;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-
-    flex-wrap: wrap;
+    max-width:1180px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
 }
 
-footer .logo {
-    color: white;
-}
+/* =====================================================
+   MOBILE
+===================================================== */
 
-footer p {
-    margin: 5px 0;
-}
+@media(max-width:900px) {
 
-/* MOBILE */
-
-@media(max-width: 850px) {
-
-    .nav-links a:not(.quote-link) {
-        display: none;
+    .nav-links {
+        display:none;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quote-form {
-        grid-template-columns: 1fr;
+    .mobile-menu {
+        display:block;
     }
 
     .hero h1 {
-        font-size: 52px;
-        letter-spacing: -2px;
+        font-size:52px;
+        letter-spacing:-2px;
     }
 
-    .section {
-        padding: 60px 5%;
+    .hero-stats {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .grid {
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .dashboard-two {
+        grid-template-columns:1fr;
+    }
+
+    .portal-layout {
+        grid-template-columns:1fr;
+    }
+
+    .sidebar {
+        display:none;
+    }
+
+    .form-grid {
+        grid-template-columns:1fr;
+    }
+
+    .job-card {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .job-right {
+        text-align:left;
     }
 
 }
 
-</style>
-</head>
-
-
-<body>
-
-
-<!-- ================= NAVIGATION ================= -->
-
-<nav>
-
-    <div class="logo">
-        CNC<span>-HUB</span>
-    </div>
-
-    <div class="nav-links">
-
-        <a href="#how">
-            How it works
-        </a>
-
-        <a href="#capabilities">
-            Capabilities
-        </a>
-
-        <a href="#network">
-            Manufacturing Network
-        </a>
-
-        <a class="btn btn-primary quote-link"
-           href="#quote">
-            Request a Quote
-        </a>
-
-    </div>
-
-</nav>
-
-
-<!-- ================= HERO ================= -->
-
-<header class="hero">
-
-    <div class="hero-circle"></div>
-
-    <div class="hero-content">
-
-        <div class="kicker">
-            UK Manufacturing Made Simple
-        </div>
-
-        <h1>
-            One Job.<br>
-            One Contact.<br>
-            We Find The Way.
-        </h1>
-
-        <p>
-            From prototypes and one-off components to
-            production runs, CNC-Hub finds the right UK
-            manufacturing capacity and manages the job
-            from enquiry through delivery.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#quote"
-               class="btn btn-primary">
-
-                I Need Parts Made
-
-            </a>
-
-            <a href="#network"
-               class="btn btn-outline">
-
-                I Have Manufacturing Capacity
-
-            </a>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- ================= WHY CNC HUB ================= -->
-
-<section class="section">
-
-    <h2>
-        Why CNC-Hub?
-    </h2>
-
-    <p class="lead">
-        You don't need to know who can make it.
-        You just need to know CNC-Hub.
-    </p>
-
-
-    <div class="grid">
-
-
-        <div class="card">
-
-            <div class="icon">
-                ⌁
-            </div>
-
-            <h3>
-                Local & UK-Wide
-            </h3>
-
-            <p>
-                Start locally, use our wider UK network
-                when the right capability is elsewhere.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">
-                ⚡
-            </div>
-
-            <h3>
-                Fast
-            </h3>
-
-            <p>
-                We quickly identify suitable manufacturing
-                capacity and obtain competitive quotations.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">
-                🔒
-            </div>
-
-            <h3>
-                Confidential
-            </h3>
-
-            <p>
-                Customer and supplier identities are
-                controlled and information is released
-                only when required.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">
-                ✓
-            </div>
-
-            <h3>
-                Quality Options
-            </h3>
-
-            <p>
-                From supplier inspection to independent
-                inspection and CMM for demanding work.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">
-                ↗
-            </div>
-
-            <h3>
-                Flexible
-            </h3>
-
-            <p>
-                One-off prototypes, small batches and
-                production work.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">
-                £
-            </div>
-
-            <h3>
-                No Membership Fees
-            </h3>
-
-            <p>
-                No subscription to submit a project or
-                join the network. No job, no charge.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= HOW IT WORKS ================= -->
-
-<section id="how" class="band">
-
-<div class="section">
-
-    <h2>
-        How It Works
-    </h2>
-
-    <p class="lead">
-        One point of contact from drawing to delivery.
-    </p>
-
-
-    <div class="steps">
-
-
-        <div class="step">
-
-            <div class="number">
-                1
-            </div>
-
-            <div>
-
-                <strong>
-                    Submit
-                </strong>
-
-                <br>
-
-                Send your drawings, quantities,
-                materials, tolerances and delivery
-                requirements.
-
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="number">
-                2
-            </div>
-
-            <div>
-
-                <strong>
-                    We Match
-                </strong>
-
-                <br>
-
-                We identify suitable manufacturing
-                capacity within our UK network.
-
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="number">
-                3
-            </div>
-
-            <div>
-
-                <strong>
-                    We Quote
-                </strong>
-
-                <br>
-
-                We obtain competitive manufacturing
-                prices and prepare your CNC-Hub quotation.
-
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="number">
-                4
-            </div>
-
-            <div>
-
-                <strong>
-                    You Approve
-                </strong>
-
-                <br>
-
-                Choose the solution that fits your
-                price, quality and lead-time requirements.
-
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="number">
-                5
-            </div>
-
-            <div>
-
-                <strong>
-                    We Manage
-                </strong>
-
-                <br>
-
-                Manufacturing, quality requirements,
-                inspection and logistics are coordinated
-                by CNC-Hub.
-
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="number">
-                6
-            </div>
-
-            <div>
-
-                <strong>
-                    You Receive
-                </strong>
-
-                <br>
-
-                Your finished components, delivered
-                where required.
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= CAPABILITIES ================= -->
-
-<section id="capabilities"
-         class="section">
-
-    <h2>
-        Manufacturing Capabilities
-    </h2>
-
-    <p class="lead">
-        CNC machining and complementary manufacturing
-        processes through our UK manufacturing network.
-    </p>
-
-
-    <div class="grid">
-
-
-        <div class="card">
-
-            <h3>
-                CNC Milling
-            </h3>
-
-            <p>
-                3-axis, 4-axis, 5-axis and complex
-                milling.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                CNC Turning
-            </h3>
-
-            <p>
-                Turning and multi-process work for
-                prototypes and production.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Multi-Axis Machining
-            </h3>
-
-            <p>
-                Complex components requiring advanced
-                machining capabilities.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Sheet Metal
-            </h3>
-
-            <p>
-                Laser cutting, folding and fabricated
-                components.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Finishing
-            </h3>
-
-            <p>
-                Anodising, plating, powder coating,
-                heat treatment and other finishing.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Inspection
-            </h3>
-
-            <p>
-                Supplier inspection, inspection reports,
-                independent inspection and CMM where
-                required.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= SUPPLIER NETWORK ================= -->
-
-<section id="network"
-         class="band">
-
-<div class="section">
-
-    <h2>
-        Have Manufacturing Capacity?
-    </h2>
-
-    <p class="lead">
-        Turn available capacity into new work.
-        Join the CNC-Hub manufacturing network.
-    </p>
-
-
-    <div class="grid">
-
-
-        <div class="card">
-
-            <h3>
-                Tell Us What You Can Make
-            </h3>
-
-            <p>
-                Machines, axes, envelope, materials,
-                tolerances, certifications, industries
-                and batch sizes.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Receive Suitable Opportunities
-            </h3>
-
-            <p>
-                We send relevant jobs that match your
-                capabilities and capacity.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Quote & Win Work
-            </h3>
-
-            <p>
-                Respond only to opportunities that fit
-                your capabilities.
-            </p>
-
-        </div>
-
-
-    </div>
-
-
-    <br>
-
-
-    <a href="#supplier-form"
-       class="btn btn-dark">
-
-        Join The Manufacturing Network
-
-    </a>
-
-
-</div>
-
-</section>
-
-
-
-<!-- ================= QUOTE ================= -->
-
-<section id="quote"
-         class="section">
-
-    <h2>
-        Request a Quote
-    </h2>
-
-    <p class="lead">
-        Tell us what you need manufactured.
-        We'll find the right manufacturing solution.
-    </p>
-
-
-    <div class="quote-box">
-
-
-        <form class="quote-form"
-              onsubmit="submitQuote(event)">
-
-
-            <input
-                type="text"
-                placeholder="Your name"
-                required
-            >
-
-
-            <input
-                type="text"
-                placeholder="Company name"
-            >
-
-
-            <input
-                type="email"
-                placeholder="Email address"
-                required
-            >
-
-
-            <input
-                type="tel"
-                placeholder="Phone number"
-            >
-
-
-            <select>
-
-                <option>
-                    Manufacturing process
-                </option>
-
-                <option>
-                    CNC Milling
-                </option>
-
-                <option>
-                    CNC Turning
-                </option>
-
-                <option>
-                    Multi-Axis Machining
-                </option>
-
-                <option>
-                    Sheet Metal
-                </option>
-
-                <option>
-                    Other
-                </option>
-
-                <option>
-                    I'm not sure
-                </option>
-
-            </select>
-
-
-            <input
-                type="text"
-                placeholder="Quantity"
-            >
-
-
-            <input
-                type="text"
-                placeholder="Material"
-            >
-
-
-            <input
-                type="text"
-                placeholder="Required delivery date"
-            >
-
-
-            <textarea
-                class="full"
-                rows="5"
-                placeholder="Tell us about the project, tolerances, finishes and any other requirements..."
-            ></textarea>
-
-
-            <label class="full">
-
-                Upload drawings / STEP / DXF / PDF
-
-                <br><br>
-
-                <input
-                    type="file"
-                    multiple
-                >
-
-            </label>
-
-
-            <button
-                class="btn btn-primary full"
-                type="submit">
-
-                Submit Manufacturing Enquiry
-
-            </button>
-
-
-        </form>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= CONFIDENTIALITY ================= -->
-
-<section class="confidential">
-
-<div class="section">
-
-    <h2>
-        Confidential By Design.
-    </h2>
-
-    <p class="lead">
-        Your project stays your project.
-    </p>
-
-
-    <p>
-        Customer identity, commercial information and
-        supplier identity are controlled. Manufacturing
-        partners receive the information required to quote
-        and manufacture — no more than necessary.
-    </p>
-
-
-    <div class="grid">
-
-
-        <div class="card">
-
-            <h3>
-                Stage 1
-            </h3>
-
-            <p>
-                Anonymous job reference and technical
-                summary.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Stage 2
-            </h3>
-
-            <p>
-                Additional technical information after
-                confidentiality requirements are accepted.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Stage 3
-            </h3>
-
-            <p>
-                Full manufacturing package released
-                when the job is awarded.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= QUALITY ================= -->
-
-<section class="section">
-
-    <h2>
-        Quality When It Matters.
-    </h2>
-
-    <p class="lead">
-        Different projects require different levels of
-        inspection. CNC-Hub can arrange the appropriate
-        level for your requirements.
-    </p>
-
-
-    <div class="grid">
-
-
-        <div class="card">
-
-            <h3>
-                Standard
-            </h3>
-
-            <p>
-                Manufacturer's standard inspection.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Controlled
-            </h3>
-
-            <p>
-                Additional dimensional inspection and
-                inspection documentation.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                Independent
-            </h3>
-
-            <p>
-                Third-party inspection for more demanding
-                projects.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                CMM
-            </h3>
-
-            <p>
-                Coordinate measuring machine inspection
-                where precision and traceability require it.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= SUPPLIER FORM ================= -->
-
-<section id="supplier-form"
-         class="band">
-
-<div class="section">
-
-    <h2>
-        Join Our Manufacturing Network
-    </h2>
-
-    <p class="lead">
-        No membership subscription. Tell us what you can
-        manufacture and we'll contact you when suitable
-        opportunities become available.
-    </p>
-
-
-    <div class="quote-box">
-
-
-        <form class="quote-form"
-              onsubmit="submitSupplier(event)">
-
-
-            <input
-                placeholder="Contact name"
-                required
-            >
-
-
-            <input
-                placeholder="Company name"
-                required
-            >
-
-
-            <input
-                type="email"
-                placeholder="Business email"
-                required
-            >
-
-
-            <input
-                type="tel"
-                placeholder="Telephone"
-            >
-
-
-            <input
-                placeholder="Town / postcode"
-            >
-
-
-            <input
-                placeholder="Website"
-            >
-
-
-            <textarea
-                class="full"
-                rows="5"
-                placeholder="Machines, axes, materials, maximum component size, tolerances and typical batch sizes..."
-            ></textarea>
-
-
-            <textarea
-                class="full"
-                rows="4"
-                placeholder="Certifications and industries served..."
-            ></textarea>
-
-
-            <button
-                class="btn btn-primary full"
-                type="submit">
-
-                Submit Supplier Application
-
-            </button>
-
-
-        </form>
-
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="section">
-
-    <h2>
-        About CNC-Hub
-    </h2>
-
-    <p class="lead">
-
-        CNC-Hub was created to make UK manufacturing
-        easier to access.
-
-    </p>
-
-
-    <p>
-
-        Instead of businesses spending days searching for
-        suitable machining companies, CNC-Hub provides one
-        point of contact and manages the manufacturing
-        process from enquiry to delivery.
-
-    </p>
-
-
-    <p>
-
-        Starting from Wellingborough, our goal is to build
-        a trusted UK-wide manufacturing network while
-        maintaining a strong local focus.
-
-    </p>
-
-</section>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="footer-content">
-
-
-    <div>
-
-        <div class="logo">
-            CNC<span>-HUB</span>
-        </div>
-
-        <p>
-            UK Manufacturing Made Simple
-        </p>
-
-    </div>
-
-
-    <div>
-
-        <strong>
-            Wellingborough, UK
-        </strong>
-
-        <p>
-            07305 620 893
-        </p>
-
-        <p>
-            wheelswithnuts@gmail.com
-        </p>
-
-    </div>
-
-
-</div>
-
-</footer>
-
-
-
-<!-- ================= DEMO FUNCTIONS ================= -->
-
-<script>
-
-function submitQuote(event) {
-
-    event.preventDefault();
-
-    alert(
-        "Thank you. This is currently a website prototype. " +
-        "In the live CNC-Hub platform, your enquiry and drawings " +
-        "would be securely submitted to the CNC-Hub system."
-    );
-
-}
-
-
-function submitSupplier(event) {
-
-    event.preventDefault();
-
-    alert(
-        "Thank you. This is currently a website prototype. " +
-        "In the live version, your application would be securely " +
-        "submitted for review by CNC-Hub."
-    );
-
-}
-
-</script>
-
-
-</body>
-</html>
+@media(max-width
