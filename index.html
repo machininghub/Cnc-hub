@@ -869,4 +869,3352 @@ footer {
 
 }
 
-@media(max-width
+@media(max-width:600px) {
+
+    nav {
+        padding:0 20px;
+    }
+
+    .nav-actions .btn-outline {
+        display:none;
+    }
+
+    .hero {
+        padding:70px 20px;
+    }
+
+    .hero h1 {
+        font-size:44px;
+    }
+
+    .hero-stats {
+        grid-template-columns:1fr;
+    }
+
+    .section {
+        padding:60px 20px;
+    }
+
+    .section h2 {
+        font-size:32px;
+    }
+
+    .portal-content {
+        padding:20px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .table {
+        min-width:700px;
+    }
+
+    .portal-card {
+        overflow-x:auto;
+    }
+
+}
+
+/* =====================================================
+   HIDDEN
+===================================================== */
+
+.hidden {
+    display:none !important;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     PUBLIC NAVIGATION
+===================================================== -->
+
+<nav id="publicNav">
+
+    <div class="logo" onclick="showHome()">
+        CNC<span>-HUB</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#jobs">Find CNC Work</a>
+        <a href="#how">How It Works</a>
+        <a href="#manufacturers">Manufacturers</a>
+        <a href="#network">For Manufacturers</a>
+
+    </div>
+
+    <div class="nav-actions">
+
+        <button class="btn btn-outline"
+                onclick="openLogin()">
+            Login
+        </button>
+
+        <button class="btn btn-primary"
+                onclick="openLogin()">
+            Join CNC-Hub
+        </button>
+
+    </div>
+
+    <button class="mobile-menu"
+            onclick="openLogin()">
+        ☰
+    </button>
+
+</nav>
+
+
+<!-- =====================================================
+     PUBLIC WEBSITE
+===================================================== -->
+
+<main id="publicSite">
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-circle"></div>
+
+    <div class="hero-content">
+
+        <div class="kicker">
+            UK CNC Manufacturing Exchange
+        </div>
+
+        <h1>
+            Find CNC Work.<br>
+            Find CNC Capacity.<br>
+            Get Jobs Moving.
+        </h1>
+
+        <p>
+            CNC-Hub connects UK engineering companies with
+            CNC manufacturers that have the right machines,
+            capabilities and capacity.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="btn btn-primary"
+                    onclick="openPostJob()">
+
+                + Post a CNC Job
+
+            </button>
+
+            <button class="btn btn-outline"
+                    onclick="scrollToJobs()">
+
+                Find CNC Work
+
+            </button>
+
+        </div>
+
+
+        <div class="hero-stats">
+
+            <div class="hero-stat">
+
+                <strong>1,284</strong>
+                <span>Verified Manufacturers</span>
+
+            </div>
+
+            <div class="hero-stat">
+
+                <strong>327</strong>
+                <span>Jobs Available</span>
+
+            </div>
+
+            <div class="hero-stat">
+
+                <strong>86</strong>
+                <span>New Jobs This Week</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- HOW IT WORKS -->
+
+<section id="how" class="section">
+
+    <div class="section-title">
+
+        <h2>
+            A manufacturing exchange built for CNC.
+        </h2>
+
+        <p class="lead">
+            Buyers post work. Manufacturers find suitable
+            jobs. CNC-Hub helps both sides get the right
+            work moving quickly.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="icon">01</div>
+
+            <h3>
+                Post Your Job
+            </h3>
+
+            <p>
+                Upload drawings, quantities, materials,
+                tolerances and delivery requirements.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">02</div>
+
+            <h3>
+                We Match
+            </h3>
+
+            <p>
+                Suitable manufacturers are identified
+                based on their machines, capabilities,
+                location and capacity.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">03</div>
+
+            <h3>
+                Receive Quotes
+            </h3>
+
+            <p>
+                Compare suitable manufacturing options
+                and choose the right supplier.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">04</div>
+
+            <h3>
+                Manufacture
+            </h3>
+
+            <p>
+                Track the job from order confirmation
+                through production and quality inspection.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">05</div>
+
+            <h3>
+                Deliver
+            </h3>
+
+            <p>
+                Keep delivery, documentation and job
+                communication together in one place.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">06</div>
+
+            <h3>
+                Build Reputation
+            </h3>
+
+            <p>
+                Manufacturers build reviews and a
+                trusted CNC-Hub profile through completed jobs.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MARKETPLACE -->
+
+<section id="jobs" class="band">
+
+<div class="section">
+
+    <div class="section-title">
+
+        <h2>
+            CNC Jobs Available Now
+        </h2>
+
+        <p class="lead">
+            Find manufacturing work that matches your
+            machines, materials and capabilities.
+        </p>
+
+    </div>
+
+
+    <div style="
+        display:flex;
+        gap:10px;
+        flex-wrap:wrap;
+        margin-top:25px;
+    ">
+
+        <select id="publicProcessFilter"
+                onchange="filterPublicJobs()"
+                style="
+                    padding:12px;
+                    border:1px solid #cbd5e1;
+                    border-radius:7px;
+                ">
+
+            <option value="">All Processes</option>
+            <option value="CNC Milling">CNC Milling</option>
+            <option value="CNC Turning">CNC Turning</option>
+            <option value="5 Axis Milling">5 Axis Milling</option>
+            <option value="Sheet Metal">Sheet Metal</option>
+
+        </select>
+
+
+        <select id="publicMaterialFilter"
+                onchange="filterPublicJobs()"
+                style="
+                    padding:12px;
+                    border:1px solid #cbd5e1;
+                    border-radius:7px;
+                ">
+
+            <option value="">All Materials</option>
+            <option value="Aluminium">Aluminium</option>
+            <option value="Stainless Steel">Stainless Steel</option>
+            <option value="Titanium">Titanium</option>
+            <option value="Inconel">Inconel</option>
+
+        </select>
+
+    </div>
+
+
+    <div id="publicJobList"
+         class="job-list">
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- MANUFACTURERS -->
+
+<section id="manufacturers" class="section">
+
+    <h2>
+        Find Capable UK Manufacturers
+    </h2>
+
+    <p class="lead">
+        Manufacturers build detailed profiles around their
+        machines, materials, certifications and capabilities.
+    </p>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>
+                Smith Engineering Ltd
+            </h3>
+
+            <div class="job-meta">
+                <span class="tag green">★ 4.9</span>
+                <span class="tag">47 Jobs</span>
+            </div>
+
+            <p>
+                Birmingham · 5 Axis · CNC Milling ·
+                CNC Turning · CMM
+            </p>
+
+            <button class="btn btn-outline btn-small"
+                    onclick="showManufacturer('Smith Engineering Ltd')">
+                View Manufacturer
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Midlands Precision
+            </h3>
+
+            <div class="job-meta">
+                <span class="tag green">★ 4.8</span>
+                <span class="tag">31 Jobs</span>
+            </div>
+
+            <p>
+                Coventry · CNC Turning · Swiss Turning ·
+                Stainless · Aluminium
+            </p>
+
+            <button class="btn btn-outline btn-small"
+                    onclick="showManufacturer('Midlands Precision')">
+                View Manufacturer
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Advanced Machining UK
+            </h3>
+
+            <div class="job-meta">
+                <span class="tag green">★ 5.0</span>
+                <span class="tag">62 Jobs</span>
+            </div>
+
+            <p>
+                Wolverhampton · 5 Axis · Titanium ·
+                Inconel · Aerospace
+            </p>
+
+            <button class="btn btn-outline btn-small"
+                    onclick="showManufacturer('Advanced Machining UK')">
+                View Manufacturer
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MANUFACTURER CTA -->
+
+<section id="network" class="band">
+
+<div class="section">
+
+    <div class="card"
+         style="
+            background:var(--navy);
+            color:white;
+            padding:45px;
+         ">
+
+        <h2>
+            Have CNC Capacity?
+        </h2>
+
+        <p style="color:#cbd5e1;max-width:650px;">
+
+            Stop relying only on existing customers.
+            Join the CNC-Hub manufacturing exchange and
+            receive jobs that match your capabilities.
+
+        </p>
+
+        <div style="margin-top:25px;">
+
+            <button class="btn btn-primary"
+                    onclick="openLogin('manufacturer')">
+
+                Join as a Manufacturer
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+    <div>
+
+        <div class="logo">
+            CNC<span>-HUB</span>
+        </div>
+
+        <p>
+            The UK CNC manufacturing exchange.
+        </p>
+
+    </div>
+
+    <div>
+
+        <strong>Platform</strong>
+
+        <p>Find CNC Work</p>
+        <p>Post a Job</p>
+        <p>Manufacturers</p>
+
+    </div>
+
+    <div>
+
+        <strong>Company</strong>
+
+        <p>About CNC-Hub</p>
+        <p>Contact</p>
+        <p>Terms</p>
+        <p>Privacy</p>
+
+    </div>
+
+</div>
+
+</footer>
+
+</main>
+
+
+<!-- =====================================================
+     PORTAL
+===================================================== -->
+
+<section id="portal"
+         class="portal">
+
+
+<div class="portal-header">
+
+    <div>
+
+        <h1 id="portalTitle">
+            Dashboard
+        </h1>
+
+        <small id="portalSubtitle">
+            CNC-Hub Member Portal
+        </small>
+
+    </div>
+
+
+    <div class="user-chip">
+
+        <span id="portalUser">
+            ABC Engineering
+        </span>
+
+        <div class="avatar">
+            AE
+        </div>
+
+        <button class="btn btn-outline btn-small"
+                onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="portal-layout">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <button class="orange"
+            onclick="portalPage('post')">
+        + Post CNC Job
+    </button>
+
+
+    <div class="sidebar-title">
+        Workspace
+    </div>
+
+
+    <button class="active"
+            onclick="portalPage('dashboard')">
+        ▦ Dashboard
+    </button>
+
+
+    <button onclick="portalPage('jobs')">
+        ⌕ Find CNC Work
+    </button>
+
+
+    <button onclick="portalPage('myjobs')">
+        ◫ My Jobs
+    </button>
+
+
+    <button onclick="portalPage('quotes')">
+        £ My Quotes
+    </button>
+
+
+    <button onclick="portalPage('messages')">
+        ✉ Messages
+    </button>
+
+
+    <button onclick="portalPage('files')">
+        □ Files
+    </button>
+
+
+    <div class="sidebar-title">
+        Company
+    </div>
+
+
+    <button onclick="portalPage('company')">
+        ◉ Company Profile
+    </button>
+
+
+    <button onclick="portalPage('alerts')">
+        ⚡ Job Alerts
+    </button>
+
+
+    <button onclick="portalPage('settings')">
+        ⚙ Settings
+    </button>
+
+</aside>
+
+
+<!-- PORTAL CONTENT -->
+
+<main id="portalContent"
+      class="portal-content">
+
+</main>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LOGIN MODAL
+===================================================== -->
+
+<div id="loginOverlay"
+     class="login-overlay">
+
+<div class="login-box">
+
+    <button class="close-login"
+            onclick="closeLogin()">
+        ×
+    </button>
+
+    <div class="logo">
+        CNC<span>-HUB</span>
+    </div>
+
+    <h2>
+        Welcome back
+    </h2>
+
+    <p style="color:var(--muted);">
+        Access your CNC-Hub marketplace account.
+    </p>
+
+
+    <div class="login-tabs">
+
+        <button id="customerTab"
+                class="active"
+                onclick="setLoginType('customer')">
+            Customer
+        </button>
+
+        <button id="manufacturerTab"
+                onclick="setLoginType('manufacturer')">
+            Manufacturer
+        </button>
+
+    </div>
+
+
+    <form onsubmit="login(event)">
+
+        <div class="form-group"
+             style="margin-bottom:15px;">
+
+            <label>Email address</label>
+
+            <input id="loginEmail"
+                   type="email"
+                   value="demo@abcexample.co.uk"
+                   required>
+
+        </div>
+
+
+        <div class="form-group"
+             style="margin-bottom:15px;">
+
+            <label>Password</label>
+
+            <input type="password"
+                   value="password"
+                   required>
+
+        </div>
+
+
+        <button class="btn btn-primary"
+                style="width:100%;">
+
+            Login to CNC-Hub
+
+        </button>
+
+    </form>
+
+
+    <div class="demo-note">
+
+        <strong>Demo mode</strong><br>
+
+        This prototype lets you explore the customer and
+        manufacturer portals without a database.
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     POST JOB MODAL
+===================================================== -->
+
+<div id="postJobModal"
+     class="modal">
+
+<div class="modal-box">
+
+    <div class="modal-header">
+
+        <div>
+
+            <h2>
+                Post a CNC Job
+            </h2>
+
+            <p style="color:var(--muted);">
+                Tell manufacturers what you need made.
+            </p>
+
+        </div>
+
+        <button class="modal-close"
+                onclick="closePostJob()">
+            ×
+        </button>
+
+    </div>
+
+
+    <form onsubmit="createJob(event)">
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>Part / Job Name</label>
+
+                <input id="newJobName"
+                       placeholder="e.g. Aluminium Housing"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Drawing Number</label>
+
+                <input placeholder="e.g. DWG-10482">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Manufacturing Process</label>
+
+                <select id="newJobProcess"
+                        required>
+
+                    <option value="">
+                        Select process
+                    </option>
+
+                    <option>
+                        CNC Milling
+                    </option>
+
+                    <option>
+                        CNC Turning
+                    </option>
+
+                    <option>
+                        5 Axis Milling
+                    </option>
+
+                    <option>
+                        Sheet Metal
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Material</label>
+
+                <select id="newJobMaterial"
+                        required>
+
+                    <option value="">
+                        Select material
+                    </option>
+
+                    <option>Aluminium</option>
+                    <option>Stainless Steel</option>
+                    <option>Titanium</option>
+                    <option>Inconel</option>
+                    <option>Mild Steel</option>
+                    <option>Engineering Plastic</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Quantity</label>
+
+                <input id="newJobQuantity"
+                       type="number"
+                       placeholder="250"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Required Delivery</label>
+
+                <input type="date"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Maximum Tolerance</label>
+
+                <input placeholder="e.g. ±0.02mm">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Surface Finish</label>
+
+                <input placeholder="e.g. Ra 1.6">
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>Job Description</label>
+
+                <textarea rows="5"
+                          placeholder="Describe the component, requirements, inspection requirements and any other information manufacturers should know."
+                          required></textarea>
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>Drawings & Technical Files</label>
+
+                <div class="file-upload">
+
+                    <strong>
+                        Upload STEP, STP, DXF, DWG, PDF or ZIP
+                    </strong>
+
+                    <br><br>
+
+                    <input type="file"
+                           multiple>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div style="
+            display:flex;
+            justify-content:flex-end;
+            gap:10px;
+            margin-top:25px;
+        ">
+
+            <button type="button"
+                    class="btn btn-outline"
+                    onclick="closePostJob()">
+
+                Cancel
+
+            </button>
+
+
+            <button class="btn btn-primary">
+
+                Post Job
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     JOB DETAIL MODAL
+===================================================== -->
+
+<div id="jobModal"
+     class="modal">
+
+<div class="modal-box">
+
+    <div id="jobDetail"></div>
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast"
+     class="toast">
+</div>
+
+
+<script>
+
+/* =====================================================
+   DEMO DATA
+===================================================== */
+
+let currentUserType = "customer";
+
+let jobs = [
+
+    {
+        id:"10482",
+        name:"Aluminium Housing",
+        process:"CNC Milling",
+        material:"Aluminium",
+        quantity:"250",
+        location:"Birmingham",
+        delivery:"12 September 2026",
+        budget:"£1,500 – £2,000",
+        status:"Quotes Open",
+        description:
+        "Precision aluminium housing requiring CNC milling and dimensional inspection."
+    },
+
+    {
+        id:"10479",
+        name:"Stainless Steel Shaft",
+        process:"CNC Turning",
+        material:"Stainless Steel",
+        quantity:"50",
+        location:"Coventry",
+        delivery:"5 September 2026",
+        budget:"£900 – £1,300",
+        status:"Quotes Open",
+        description:
+        "Stainless steel shaft with tight bore and diameter tolerances."
+    },
+
+    {
+        id:"10476",
+        name:"Titanium Bracket",
+        process:"5 Axis Milling",
+        material:"Titanium",
+        quantity:"35",
+        location:"UK Wide",
+        delivery:"20 September 2026",
+        budget:"£2,500 – £3,500",
+        status:"New",
+        description:
+        "Complex 5-axis titanium bracket for aerospace application."
+    },
+
+    {
+        id:"10471",
+        name:"Motor Mount",
+        process:"5 Axis Milling",
+        material:"Aluminium",
+        quantity:"10",
+        location:"West Midlands",
+        delivery:"28 September 2026",
+        budget:"£700 – £1,000",
+        status:"New",
+        description:
+        "Prototype motor mount requiring 5-axis machining."
+    },
+
+    {
+        id:"10465",
+        name:"Steel Mounting Plate",
+        process:"CNC Milling",
+        material:"Mild Steel",
+        quantity:"100",
+        location:"Derby",
+        delivery:"2 October 2026",
+        budget:"£1,100 – £1,500",
+        status:"New",
+        description:
+        "Batch production mounting plate."
+    }
+
+];
+
+
+/* =====================================================
+   INITIALISE
+===================================================== */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    renderPublicJobs();
+
+});
+
+
+/* =====================================================
+   PUBLIC JOB MARKETPLACE
+===================================================== */
+
+function renderPublicJobs(){
+
+    const container =
+        document.getElementById("publicJobList");
+
+    const process =
+        document.getElementById("publicProcessFilter").value;
+
+    const material =
+        document.getElementById("publicMaterialFilter").value;
+
+    let filtered = jobs.filter(job => {
+
+        const processMatch =
+            !process || job.process === process;
+
+        const materialMatch =
+            !material || job.material === material;
+
+        return processMatch && materialMatch;
+
+    });
+
+
+    container.innerHTML = "";
+
+
+    if(filtered.length === 0){
+
+        container.innerHTML = `
+            <div class="card">
+                <h3>No matching jobs</h3>
+                <p>
+                    Try changing your search filters.
+                </p>
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    filtered.forEach(job => {
+
+        container.innerHTML += `
+
+            <div class="job-card">
+
+                <div class="job-main">
+
+                    <h3>
+                        #${job.id} · ${job.name}
+                    </h3>
+
+                    <div class="job-meta">
+
+                        <span class="tag orange">
+                            ${job.process}
+                        </span>
+
+                        <span class="tag">
+                            ${job.material}
+                        </span>
+
+                        <span class="tag">
+                            ${job.quantity} pcs
+                        </span>
+
+                        <span class="tag">
+                            ${job.location}
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Delivery:
+                        <strong>${job.delivery}</strong>
+                    </p>
+
+                </div>
+
+
+                <div class="job-right">
+
+                    <strong>
+                        ${job.budget}
+                    </strong>
+
+                    <span>
+                        ${job.status}
+                    </span>
+
+                    <br><br>
+
+                    <button
+                        class="btn btn-dark btn-small"
+                        onclick="viewJob('${job.id}')">
+
+                        View Job
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+function filterPublicJobs(){
+
+    renderPublicJobs();
+
+}
+
+
+function scrollToJobs(){
+
+    document.getElementById("jobs")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function openLogin(type){
+
+    if(type){
+
+        setLoginType(type);
+
+    }
+
+    document
+        .getElementById("loginOverlay")
+        .classList.add("active");
+
+}
+
+
+function closeLogin(){
+
+    document
+        .getElementById("loginOverlay")
+        .classList.remove("active");
+
+}
+
+
+function setLoginType(type){
+
+    currentUserType = type;
+
+    document
+        .getElementById("customerTab")
+        .classList.toggle(
+            "active",
+            type === "customer"
+        );
+
+    document
+        .getElementById("manufacturerTab")
+        .classList.toggle(
+            "active",
+            type === "manufacturer"
+        );
+
+}
+
+
+function login(event){
+
+    event.preventDefault();
+
+    closeLogin();
+
+    document
+        .getElementById("publicNav")
+        .style.display = "none";
+
+    document
+        .getElementById("publicSite")
+        .style.display = "none";
+
+    document
+        .getElementById("portal")
+        .classList.add("active");
+
+
+    if(currentUserType === "manufacturer"){
+
+        document.getElementById("portalUser")
+            .textContent =
+            "Smith Engineering Ltd";
+
+        document.getElementById("portalSubtitle")
+            .textContent =
+            "Manufacturer Portal";
+
+        document.getElementById("portalTitle")
+            .textContent =
+            "Manufacturer Dashboard";
+
+        renderManufacturerDashboard();
+
+    } else {
+
+        document.getElementById("portalUser")
+            .textContent =
+            "ABC Engineering";
+
+        document.getElementById("portalSubtitle")
+            .textContent =
+            "Customer Portal";
+
+        document.getElementById("portalTitle")
+            .textContent =
+            "Customer Dashboard";
+
+        renderCustomerDashboard();
+
+    }
+
+}
+
+
+function logout(){
+
+    document
+        .getElementById("portal")
+        .classList.remove("active");
+
+    document
+        .getElementById("publicNav")
+        .style.display = "flex";
+
+    document
+        .getElementById("publicSite")
+        .style.display = "block";
+
+    showToast("You have been logged out.");
+
+}
+
+
+/* =====================================================
+   PORTAL NAVIGATION
+===================================================== */
+
+function portalPage(page){
+
+    document
+        .querySelectorAll(".sidebar button")
+        .forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+
+    if(page === "dashboard"){
+
+        if(currentUserType === "manufacturer"){
+            renderManufacturerDashboard();
+        } else {
+            renderCustomerDashboard();
+        }
+
+    }
+
+
+    if(page === "jobs"){
+
+        renderJobsPage();
+
+    }
+
+
+    if(page === "myjobs"){
+
+        renderMyJobs();
+
+    }
+
+
+    if(page === "quotes"){
+
+        renderQuotes();
+
+    }
+
+
+    if(page === "messages"){
+
+        renderMessages();
+
+    }
+
+
+    if(page === "files"){
+
+        renderFiles();
+
+    }
+
+
+    if(page === "company"){
+
+        renderCompany();
+
+    }
+
+
+    if(page === "alerts"){
+
+        renderAlerts();
+
+    }
+
+
+    if(page === "settings"){
+
+        renderSettings();
+
+    }
+
+
+    if(page === "post"){
+
+        openPostJob();
+
+    }
+
+}
+
+
+/* =====================================================
+   CUSTOMER DASHBOARD
+===================================================== */
+
+function renderCustomerDashboard(){
+
+    const c =
+        document.getElementById("portalContent");
+
+
+    c.innerHTML = `
+
+        <h2>
+            Good morning, ABC Engineering
+        </h2>
+
+        <p style="color:var(--muted)">
+            Here's what's happening with your manufacturing
+            jobs.
+        </p>
+
+
+        <div class="dashboard-grid">
+
+            <div class="stat-card">
+                <span>Open Jobs</span>
+                <strong>3</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Quotes Received</span>
+                <strong>7</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>In Production</span>
+                <strong>2</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <strong>24</strong>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-two">
+
+            <div class="portal-card">
+
+                <h2>
+                    My Active Jobs
+                </h2>
+
+                <table class="table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Job</th>
+                            <th>Process</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <strong>#10482</strong><br>
+                                Aluminium Housing
+                            </td>
+
+                            <td>
+                                CNC Milling
+                            </td>
+
+                            <td>
+                                <span class="status orange">
+                                    Quotes Open
+                                </span>
+                            </td>
+
+                            <td>
+                                <button
+                                    class="btn btn-outline btn-small"
+                                    onclick="viewJob('10482')">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>#10476</strong><br>
+                                Motor Bracket
+                            </td>
+
+                            <td>
+                                5 Axis
+                            </td>
+
+                            <td>
+                                <span class="status blue">
+                                    In Production
+                                </span>
+                            </td>
+
+                            <td>
+                                <button
+                                    class="btn btn-outline btn-small">
+                                    Track
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>#10451</strong><br>
+                                Stainless Shaft
+                            </td>
+
+                            <td>
+                                Turning
+                            </td>
+
+                            <td>
+                                <span class="status green">
+                                    Completed
+                                </span>
+                            </td>
+
+                            <td>
+                                <button
+                                    class="btn btn-outline btn-small">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div>
+
+                <div class="portal-card">
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                    <button
+                        class="btn btn-primary"
+                        style="width:100%;margin-bottom:10px;"
+                        onclick="openPostJob()">
+
+                        + Post New CNC Job
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-outline"
+                        style="width:100%;margin-bottom:10px;"
+                        onclick="portalPage('quotes')">
+
+                        View Quotes
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-outline"
+                        style="width:100%;"
+                        onclick="portalPage('messages')">
+
+                        Open Messages
+
+                    </button>
+
+                </div>
+
+
+                <div class="portal-card">
+
+                    <h2>
+                        Notifications
+                    </h2>
+
+                    <p>
+                        🔔 3 new quotes received
+                    </p>
+
+                    <p>
+                        📦 Job #10476 entered production
+                    </p>
+
+                    <p>
+                        💬 New message from Smith Engineering
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   MANUFACTURER DASHBOARD
+===================================================== */
+
+function renderManufacturerDashboard(){
+
+    const c =
+        document.getElementById("portalContent");
+
+
+    c.innerHTML = `
+
+        <h2>
+            Good morning, Smith Engineering
+        </h2>
+
+        <p style="color:var(--muted)">
+            Find CNC jobs that match your manufacturing
+            capabilities.
+        </p>
+
+
+        <div class="dashboard-grid">
+
+            <div class="stat-card">
+                <span>Matched Jobs</span>
+                <strong>18</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Quotes Submitted</span>
+                <strong>12</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Jobs Won</span>
+                <strong>7</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Rating</span>
+                <strong>4.9 ★</strong>
+            </div>
+
+        </div>
+
+
+        <div class="portal-card">
+
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                gap:15px;
+                flex-wrap:wrap;
+            ">
+
+                <div>
+
+                    <h2>
+                        Jobs Matched To Your Capabilities
+                    </h2>
+
+                    <p style="color:var(--muted)">
+                        Based on your machines, materials,
+                        location and profile.
+                    </p>
+
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    onclick="portalPage('jobs')">
+
+                    Find More Jobs
+
+                </button>
+
+            </div>
+
+
+            <div id="manufacturerMatchedJobs"
+                 class="job-list">
+            </div>
+
+        </div>
+
+
+        <div class="portal-card">
+
+            <h2>
+                Your Company Profile
+            </h2>
+
+            <div class="job-meta">
+
+                <span class="tag green">
+                    ✓ ISO 9001
+                </span>
+
+                <span class="tag">
+                    5 Axis
+                </span>
+
+                <span class="tag">
+                    CNC Milling
+                </span>
+
+                <span class="tag">
+                    CNC Turning
+                </span>
+
+                <span class="tag">
+                    CMM
+                </span>
+
+            </div>
+
+            <br>
+
+            <button class="btn btn-outline"
+                    onclick="portalPage('company')">
+
+                Manage Profile
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    const list =
+        document.getElementById(
+            "manufacturerMatchedJobs"
+        );
+
+
+    jobs.slice(0,3).forEach(job => {
+
+        list.innerHTML += `
+
+            <div class="job-card">
+
+                <div class="job-main">
+
+                    <h3>
+                        #${job.id} · ${job.name}
+                    </h3>
+
+                    <div class="job-meta">
+
+                        <span class="tag orange">
+                            ${job.process}
+                        </span>
+
+                        <span class="tag">
+                            ${job.material}
+                        </span>
+
+                        <span class="tag green">
+                            94% Match
+                        </span>
+
+                    </div>
+
+                    <p>
+                        ${job.quantity} pcs ·
+                        ${job.location}
+                    </p>
+
+                </div>
+
+                <div class="job-right">
+
+                    <strong>
+                        ${job.budget}
+                    </strong>
+
+                    <br>
+
+                    <button
+                        class="btn btn-primary btn-small"
+                        onclick="viewJob('${job.id}')">
+
+                        View & Quote
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =====================================================
+   FIND WORK PAGE
+===================================================== */
+
+function renderJobsPage(){
+
+    document.getElementById("portalContent")
+        .innerHTML = `
+
+        <h2>
+            Find CNC Work
+        </h2>
+
+        <p style="color:var(--muted)">
+            Search available manufacturing jobs.
+        </p>
+
+
+        <div class="portal-card">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Process</label>
+
+                    <select id="portalProcess"
+                            onchange="renderPortalJobs()">
+
+                        <option value="">
+                            All Processes
+                        </option>
+
+                        <option>CNC Milling</option>
+                        <option>CNC Turning</option>
+                        <option>5 Axis Milling</option>
+                        <option>Sheet Metal</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Material</label>
+
+                    <select id="portalMaterial"
+                            onchange="renderPortalJobs()">
+
+                        <option value="">
+                            All Materials
+                        </option>
+
+                        <option>Aluminium</option>
+                        <option>Stainless Steel</option>
+                        <option>Titanium</option>
+                        <option>Inconel</option>
+                        <option>Mild Steel</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="portalJobs"
+             class="job-list">
+        </div>
+
+    `;
+
+
+    renderPortalJobs();
+
+}
+
+
+function renderPortalJobs(){
+
+    const container =
+        document.getElementById("portalJobs");
+
+    if(!container) return;
+
+
+    const process =
+        document.getElementById("portalProcess").value;
+
+    const material =
+        document.getElementById("portalMaterial").value;
+
+
+    const filtered =
+        jobs.filter(job => {
+
+            return (!process || job.process === process)
+                &&
+                (!material || job.material === material);
+
+        });
+
+
+    container.innerHTML = "";
+
+
+    filtered.forEach(job => {
+
+        container.innerHTML += `
+
+            <div class="job-card">
+
+                <div class="job-main">
+
+                    <h3>
+                        #${job.id} · ${job.name}
+                    </h3>
+
+                    <div class="job-meta">
+
+                        <span class="tag orange">
+                            ${job.process}
+                        </span>
+
+                        <span class="tag">
+                            ${job.material}
+                        </span>
+
+                        <span class="tag">
+                            ${job.quantity} pcs
+                        </span>
+
+                        <span class="tag">
+                            ${job.location}
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Required:
+                        <strong>${job.delivery}</strong>
+                    </p>
+
+                </div>
+
+                <div class="job-right">
+
+                    <strong>
+                        ${job.budget}
+                    </strong>
+
+                    <br><br>
+
+                    <button
+                        class="btn btn-primary btn-small"
+                        onclick="viewJob('${job.id}')">
+
+                        View Job
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =====================================================
+   MY JOBS
+===================================================== */
+
+function renderMyJobs(){
+
+    document.getElementById("portalContent")
+        .innerHTML = `
+
+        <h2>
+            My Jobs
+        </h2>
+
+        <p style="color:var(--muted)">
+            Manage your current and completed manufacturing
+            projects.
+        </p>
+
+
+        <div class="portal-card">
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+                        <th>Job</th>
+                        <th>Supplier</th>
+                        <th>Status</th>
+                        <th>Delivery</th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            #10476<br>
+                            <strong>Motor Bracket</strong>
+                        </td>
+
+                        <td>
+                            Smith Engineering
+                        </td>
+
+                        <td>
+                            <span class="status blue">
+                                In Production
+                            </span>
+                        </td>
+
+                        <td>
+                            28 Sept
+                        </td>
+
+                        <td>
+                            <button class="btn btn-outline btn-small">
+                                Track
+                            </button>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #10451<br>
+                            <strong>Stainless Shaft</strong>
+                        </td>
+
+                        <td>
+                            Midlands Precision
+                        </td>
+
+                        <td>
+                            <span class="status green">
+                                Completed
+                            </span>
+                        </td>
+
+                        <td>
+                            5 Sept
+                        </td>
+
+                        <td>
+                            <button class="btn btn-outline btn-small">
+                                View
+                            </button>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   QUOTES
+===================================================== */
+
+function renderQuotes(){
+
+    document.getElementById("portalContent")
+        .innerHTML = `
+
+        <h2>
+            My Quotes
+        </h2>
+
+        <p style="color:var(--muted)">
+            Review quotations received from manufacturers.
+        </p>
+
+
+        <div class="portal-card">
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+                        <th>Job</th>
+                        <th>Manufacturer</th>
+                        <th>Price</th>
+                        <th>Lead Time</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            #10482
+                        </td>
+
+                        <td>
+                            Smith Engineering
+                        </td>
+
+                        <td>
+                            <strong>£1,720</strong>
+                        </td>
+
+                        <td>
+                            12 days
+                        </td>
+
+                        <td>
+                            <span class="status orange">
+                                New
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #10482
+                        </td>
+
+                        <td>
+                            Midlands Precision
+                        </td>
+
+                        <td>
+                            <strong>£1,890</strong>
+                        </td>
+
+                        <td>
+                            10 days
+                        </td>
+
+                        <td>
+                            <span class="status grey">
+                                Reviewing
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            #10482
+                        </td>
+
+                        <td>
+                            Advanced Machining UK
+                        </td>
+
+                        <td>
+                            <strong>£1,640</strong>
+                        </td>
+
+                        <td>
+                            16 days
+                        </td>
+
+                        <td>
+                            <span class="status green">
+                                New
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+function renderMessages(){
+
+    document.getElementById("portalContent")
+        .innerHTML = `
+
+        <h2>
+            Messages
+        </h2>
+
+        <p style="color:var(--muted)">
+            Keep job communication inside CNC-Hub.
+        </p>
+
+
+        <div class="portal-card">
+
+            <div style="
+                padding:15px;
+                border-bottom:1px solid var(--border);
+            ">
+
+                <strong>
+                    Smith Engineering
+                </strong>
+
+                <span style="
+                    float:right;
+                    color:var(--muted);
+                    font-size:12px;
+                ">
+                    Today
+                </span>
+
+                <p>
+                    We can manufacture the housing within
+                    the requested tolerance and provide
+                    a CMM report.
+                </p>
+
+            </div>
+
+
+            <div style="
+                padding:15px;
+                border-bottom:1px solid var(--border);
+            ">
+
+                <strong>
+                    CNC-Hub
+                </strong>
+
+                <p>
+                    3 new manufacturers have matched your
+                    job #10482.
+                </p>
+
+            </div>
+
+
+            <div style="
+                display:flex;
+                gap:10px;
+                margin-top:20px;
+            ">
+
+                <input
+                    placeholder="Write a message..."
+                    style="
+                        flex:1;
+                        padding:13px;
+                        border:1px solid #cbd5e1;
+                        border-radius:7px;
+                    ">
+
+                <button class="btn btn-primary"
+                        onclick="showToast('Message sent.')">
+                    Send
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   FILES
+===================================================== */
+
+function renderFiles(){
+
+    document.getElementById("portalContent")
+        .innerHTML = `
+
+        <h2>
+            Files
+        </h2>
+
+        <p style="color:var(--muted)">
+            Technical documents connected to your jobs.
+        </p>
+
+
+        <div class="portal-card">
+
+            <div class="file-upload">
+
+                <strong>
+                    Upload files
+                </strong>
+
+                <p>
+                    STEP · STP · DXF · DWG · PDF · ZIP
+                </p>
+
+                <input type="file"
+                       multiple>
+
+            </div>
+
+
+            <br>
+
+
+            <table class="table">
+
+                <tbody>
+
+                    <tr>
+                        <td>📄 Housing_RevB.pdf</td>
+                        <td>Job #10482</td>
+                        <td>Today</td>
+                    </tr>
+
+                    <tr>
+                        <td>📐 Housing.step</td>
+                        <td>Job #10482</td>
+                        <td>Today</td>
+                    </tr>
+
+                    <tr>
+                        <td>📄 Inspection_Report.pdf</td>
+                        <td>Job #10451</td>
+                        <td>Yesterday</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   COMPANY PROFILE
+===================================================== */
+
+function renderCompany(){
+
+    document.getElementById("portalContent")
+        .innerHTML = `
+
+        <h2>
+            Company Profile
+        </h2>
+
+        <p style="color:var(--muted)">
+            Your public CNC-Hub manufacturing profile.
+        </p>
+
+
+        <div class="profile-header">
+
+            <div class="profile-name">
+
+                <div class="profile-large-avatar">
+                    SE
+                </div>
+
+                <div>
+
+                    <h2 style="margin:0;">
+                        Smith Engineering Ltd
+                    </h2>
+
+                    <p style="color:#cbd5e1;">
+                        Birmingham, West Midlands
+                    </p>
+
+                </div>
+
+            </div>
+
+            <span class="status green">
+                ✓ Verified Manufacturer
+            </span>
+
+        </div>
+
+
+        <div class="grid">
+
+            <div class="portal-card">
+
+                <h3>
+                    Capabilities
+                </h3>
+
+                <div class="job-meta">
+
+                    <span class="tag">3 Axis</span>
+                    <span class="tag">4 Axis</span>
+                    <span class="tag">5 Axis</span>
+                    <span class="tag">CNC Milling</span>
+                    <span class="tag">CNC Turning</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="portal-card">
+
+                <h3>
+                    Materials
+                </h3>
+
+                <div class="job-meta">
+
+                    <span class="tag">Aluminium</span>
+                    <span class="tag">Stainless</span>
+                    <span class="tag">Titanium</span>
+                    <span class="tag">Inconel</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="portal-card">
+
+                <h3>
+                    Certifications
+                </h3>
+
+                <div class="job-meta">
+
+                    <span class="tag green">ISO 9001</span>
+                    <span class="tag green">CMM</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="portal-card">
+
+            <h2>
+                Reputation
+            </h2>
+
+            <h1>
+                4.9 ★
+            </h1>
+
+            <p>
+                47 completed CNC-Hub jobs
+            </p>
+
+            <p>
+                98% on-time delivery
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   ALERTS
+===================================================== */
+
+function renderAlerts(){
+
+    document.getElementById("portalContent")
+        .innerHTML = `
+
+        <h2>
+            Job Alerts
+        </h2>
+
+        <p style="color:var(--muted)">
+            Automatically receive jobs matching your
+            manufacturing capabilities.
+        </p>
+
+
+        <div class="portal-card">
+
+            <h3>
+                My CNC Job Alert
+            </h3>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Processes</label>
+
+                    <select multiple>
+                        <option selected>CNC Milling</option>
+                        <option selected>5 Axis Milling</option>
+                        <option>CNC Turning</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Materials</label>
+
+                    <select multiple>
+                        <option selected>Aluminium</option>
+                        <option selected>Stainless Steel</option>
+                        <option>Titanium</option>
+                        <option>Inconel</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Maximum Distance</label>
+
+                    <select>
+                        <option>25 miles</option>
+                        <option>50 miles</option>
+                        <option selected>100 miles</option>
+                        <option>UK Wide</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Minimum Job Value</label>
+
+                    <input value="£500">
+
+                </div>
+
+            </div>
+
+
+            <br>
+
+            <button
+                class="btn btn-primary"
+                onclick="showToast('Job alert saved.')">
+
+                Save Job Alert
+
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   SETTINGS
+===================================================== */
+
+function renderSettings(){
+
+    document.getElementById("portalContent")
+        .innerHTML = `
+
+        <h2>
+            Account Settings
+        </h2>
+
+        <div class="portal-card">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>First Name</label>
+
+                    <input value="John">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Last Name</label>
+
+                    <input value="Smith">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Email</label>
+
+                    <input value="demo@abcexample.co.uk">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Phone</label>
+
+                    <input value="0121 000 0000">
+
+                </div>
+
+            </div>
+
+
+            <br>
+
+            <button class="btn btn-primary"
+                    onclick="showToast('Settings saved.')">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   VIEW JOB
+===================================================== */
+
+function viewJob(id){
+
+    const job =
+        jobs.find(j => j.id === id);
+
+    if(!job) return;
+
+
+    document.getElementById("jobDetail")
+        .innerHTML = `
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="tag orange">
+                    ${job.status}
+                </span>
+
+                <h2>
+                    #${job.id} · ${job.name}
+                </h2>
+
+            </div>
+
+            <button class="modal-close"
+                    onclick="closeJobModal()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="job-meta">
+
+            <span class="tag">
+                ${job.process}
+            </span>
+
+            <span class="tag">
+                ${job.material}
+            </span>
+
+            <span class="tag">
+                ${job.quantity} pcs
+            </span>
+
+            <span class="tag">
+                ${job.location}
+            </span>
+
+        </div>
+
+
+        <hr style="
+            border:0;
+            border-top:1px solid var(--border);
+            margin:25px 0;
+        ">
+
+
+        <div class="grid"
+             style="margin-top:0;">
+
+            <div>
+
+                <small style="color:var(--muted)">
+                    DELIVERY
+                </small>
+
+                <strong style="display:block;">
+                    ${job.delivery}
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small style="color:var(--muted)">
+                    BUDGET
+                </small>
+
+                <strong style="display:block;">
+                    ${job.budget}
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small style="color:var(--muted)">
+                    LOCATION
+                </small>
+
+                <strong style="display:block;">
+                    ${job.location}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <h3>
+            Job Description
+        </h3>
+
+        <p>
+            ${job.description}
+        </p>
+
+
+        <div class="portal-card"
+             style="background:#f8fafc;">
+
+            <h3>
+                Technical Requirements
+            </h3>
+
+            <p>
+                Drawings and technical files are available
+                to approved manufacturers.
+            </p>
+
+            <button class="btn btn-outline">
+                Request Technical Package
+            </button>
+
+        </div>
+
+
+        ${
+            currentUserType === "manufacturer"
+            ?
+            `
+
+            <div class="portal-card">
+
+                <h3>
+                    Submit Your Quote
+                </h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Your Price</label>
+
+                        <input
+                            id="quotePrice"
+                            placeholder="£1,750">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Lead Time</label>
+
+                        <input
+                            id="quoteLead"
+                            placeholder="12 working days">
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>Message to Customer</label>
+
+                        <textarea
+                            rows="4"
+                            placeholder="Tell the customer why your company is suitable for this job.">
+                        </textarea>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <button
+                    class="btn btn-primary"
+                    onclick="submitQuote('${job.id}')">
+
+                    Submit Quote
+
+                </button>
+
+            </div>
+
+            `
+            :
+            `
+            <div style="
+                display:flex;
+                justify-content:flex-end;
+                gap:10px;
+                margin-top:25px;
+            ">
+
+                <button class="btn btn-outline"
+                        onclick="closeJobModal()">
+
+                    Close
+
+                </button>
+
+                <button class="btn btn-primary"
+                        onclick="showToast('Job saved to your account.');closeJobModal();">
+
+                    Save Job
+
+                </button>
+
+            </div>
+            `
+        }
+
+    `;
+
+
+    document
+        .getElementById("jobModal")
+        .classList.add("active");
+
+}
+
+
+function closeJobModal(){
+
+    document
+        .getElementById("jobModal")
+        .classList.remove("active");
+
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+function submitQuote(jobId){
+
+    const price =
+        document.getElementById("quotePrice").value;
+
+    const lead =
+        document.getElementById("quoteLead").value;
+
+
+    if(!price || !lead){
+
+        showToast("Please enter a price and lead time.");
+
+        return;
+
+    }
+
+
+    closeJobModal();
+
+    showToast(
+        "Quote submitted successfully for Job #" + jobId
+    );
+
+}
+
+
+/* =====================================================
+   POST JOB
+===================================================== */
+
+function openPostJob(){
+
+    document
+        .getElementById("postJobModal")
+        .classList.add("active");
+
+}
+
+
+function closePostJob(){
+
+    document
+        .getElementById("postJobModal")
+        .classList.remove("active");
+
+}
+
+
+function createJob(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("newJobName").value;
+
+    const process =
+        document.getElementById("newJobProcess").value;
+
+    const material =
+        document.getElementById("newJobMaterial").value;
+
+    const quantity =
+        document.getElementById("newJobQuantity").value;
+
+
+    const newId =
+        String(
+            10483 +
+            Math.floor(Math.random() * 500)
+        );
+
+
+    jobs.unshift({
+
+        id:newId,
+
+        name:name,
+
+        process:process,
+
+        material:material,
+
+        quantity:quantity,
+
+        location:"UK",
+
+        delivery:"To be confirmed",
+
+        budget:"Awaiting Quotes",
+
+        status:"New",
+
+        description:
+            "New CNC-Hub customer job."
+
+    });
+
+
+    closePostJob();
+
+
+    showToast(
+        "Job #" + newId + " has been posted."
+    );
+
+
+    renderPublicJobs();
+
+
+    if(
+        document.getElementById("portal")
+            .classList.contains("active")
+    ){
+
+        renderCustomerDashboard();
+
+    }
+
+}
+
+
+/* =====================================================
+   MANUFACTURER PROFILE
+===================================================== */
+
+function showManufacturer(name){
+
+    document.getElementById("jobDetail")
+        .innerHTML = `
+
+        <div class="modal-header">
+
+            <h2>
+                ${name}
+            </h2>
+
+            <button class="modal-close"
+                    onclick="closeJobModal()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="profile-header">
+
+            <div class="profile-name">
+
+                <div class="profile-large-avatar">
+                    ${name.substring(0,2).toUpperCase()}
+                </div>
+
+                <div>
+
+                    <h2 style="margin:0;">
+                        ${name}
+                    </h2>
+
+                    <p style="color:#cbd5e1;">
+                        UK Manufacturing Network
+                    </p>
+
+                </div>
+
+            </div>
+
+            <span class="status green">
+                ✓ Verified
+            </span>
+
+        </div>
+
+
+        <br>
+
+
+        <div class="grid"
+             style="margin-top:0;">
+
+            <div class="card">
+
+                <h3>
+                    ★ 4.9
+                </h3>
+
+                <p>
+                    47 completed jobs
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    98%
+                </h3>
+
+                <p>
+                    On-time delivery
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    5 Axis
+                </h3>
+
+                <p>
+                    Advanced machining
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h3>
+            Capabilities
+        </h3>
+
+        <div class="job-meta">
+
+            <span class="tag">CNC Milling</span>
+            <span class="tag">CNC Turning</span>
+            <span class="tag">5 Axis</span>
+            <span class="tag">CMM</span>
+            <span class="tag">Aluminium</span>
+            <span class="tag">Stainless Steel</span>
+            <span class="tag">Titanium</span>
+
+        </div>
+
+
+        <br>
+
+        <button
+            class="btn btn-primary"
+            onclick="showToast('Quote request sent.');closeJobModal();">
+
+            Request a Quote
+
+        </button>
+
+    `;
+
+
+    document
+        .getElementById("jobModal")
+        .classList.add("active");
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function showHome(){
+
+    document
+        .getElementById("publicNav")
+        .style.display = "flex";
+
+    document
+        .getElementById("publicSite")
+        .style.display = "block";
+
+    document
+        .getElementById("portal")
+        .classList.remove("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE MODALS
+===================================================== */
+
+window.addEventListener("click",function(event){
+
+    if(event.target ===
+       document.getElementById("loginOverlay")){
+
+        closeLogin();
+
+    }
+
+
+    if(event.target ===
+       document.getElementById("postJobModal")){
+
+        closePostJob();
+
+    }
+
+
+    if(event.target ===
+       document.getElementById("jobModal")){
+
+        closeJobModal();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
