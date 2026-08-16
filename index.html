@@ -1,355 +1,1802 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="CNC-HUB is a UK-focused CNC machining job exchange connecting buyers with suitable CNC manufacturing capacity.">
-<title>CNC-HUB | UK CNC Machining Job Exchange</title>
-<style>
-:root{--navy:#07111f;--navy2:#0f1b2d;--orange:#f59e0b;--orange2:#d97706;--blue:#2563eb;--green:#16a34a;--red:#dc2626;--bg:#f4f7fa;--card:#fff;--text:#172033;--muted:#64748b;--border:#dbe3ec;--shadow:0 8px 30px rgba(15,23,42,.07)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg);line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
-.navbar{height:72px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:1000}.logo{font-size:25px;font-weight:900;letter-spacing:-1px;cursor:pointer}.logo span,.accent{color:var(--orange)}.nav-menu{display:flex;gap:24px}.nav-menu a{text-decoration:none;color:#475569;font-size:14px;font-weight:800}.nav-menu a:hover{color:var(--orange2)}.nav-actions{display:flex;gap:9px;align-items:center}.mobile-menu{display:none;border:0;background:transparent;font-size:25px}
-.btn{border:0;border-radius:8px;padding:11px 17px;font-weight:850;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--orange);color:#111827}.btn-primary:hover{background:#fbbf24}.btn-dark{background:var(--navy);color:#fff}.btn-outline{background:#fff;border:1px solid #cbd5e1;color:var(--text)}.btn-blue{background:var(--blue);color:#fff}.btn-green{background:var(--green);color:#fff}.btn-danger{background:var(--red);color:#fff}.btn-small{padding:7px 10px;font-size:12px}
-.hero{background:radial-gradient(circle at 84% 22%,rgba(245,158,11,.18),transparent 30%),radial-gradient(circle at 18% 82%,rgba(37,99,235,.12),transparent 30%),var(--navy);color:#fff;padding:90px 6%}.hero-inner{max-width:1180px;margin:auto}.kicker{color:var(--orange);font-size:13px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(44px,7vw,74px);line-height:.98;letter-spacing:-4px;max-width:920px;margin:18px 0 24px}.hero p{max-width:780px;color:#cbd5e1;font-size:19px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.hero-note{margin-top:18px;color:#94a3b8;font-size:13px}.strip{background:#fff;border-bottom:1px solid var(--border)}.strip-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr)}.strip-item{padding:22px;border-right:1px solid var(--border)}.strip-item:last-child{border-right:0}.strip-item strong{display:block;font-size:17px}.strip-item span{color:var(--muted);font-size:13px}
-.section{max-width:1180px;margin:auto;padding:72px 5%}.section-title{font-size:40px;letter-spacing:-1.5px;margin:0 0 10px}.lead{color:var(--muted);max-width:790px;font-size:17px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}.card,.panel{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:25px;box-shadow:var(--shadow)}.card-icon{width:46px;height:46px;border-radius:10px;background:#fff7df;display:grid;place-items:center;font-size:22px;margin-bottom:16px}.card p{color:var(--muted)}
-.dark-section{background:var(--navy);color:#fff}.dark-section .lead{color:#cbd5e1}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}.dark-card{background:#101d31;border:1px solid #27364b;border-radius:12px;padding:27px}.dark-card p{color:#cbd5e1}.caps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}.cap{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px}.cap strong{display:block}.cap span{font-size:13px;color:var(--muted)}
-footer{background:#050a12;color:#cbd5e1;padding:40px 6%}.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footer-link{color:#cbd5e1;text-decoration:none}.footer-link:hover{color:#fff}
-.portal{display:none;min-height:calc(100vh - 72px);background:#f1f5f9}.portal.active{display:block}.portal-layout{display:grid;grid-template-columns:235px 1fr;min-height:calc(100vh - 72px)}.sidebar{background:var(--navy);color:#fff;padding:20px 13px}.side-title{font-size:18px;font-weight:900;padding:10px 14px 23px}.side-btn{width:100%;background:transparent;border:0;color:#cbd5e1;text-align:left;padding:12px 14px;border-radius:7px;margin-bottom:3px;font-weight:750}.side-btn:hover,.side-btn.active{background:#17263d;color:#fff}.portal-main{padding:28px;overflow:hidden}.portal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.portal-top h1{margin:0;font-size:29px}.portal-user{color:var(--muted);font-size:13px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px}.stat span{color:var(--muted);font-size:12px}.stat strong{display:block;font-size:27px;margin-top:4px}.stat.orange strong{color:var(--orange2)}.stat.blue strong{color:var(--blue)}.stat.green strong{color:var(--green)}
-.panel-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}.table-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:20px}.table-head{padding:18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:10px}.table-head h3{margin:0}table{width:100%;border-collapse:collapse}th,td{padding:13px 16px;text-align:left;border-bottom:1px solid #edf0f3;font-size:13px}th{color:var(--muted);font-size:11px;text-transform:uppercase}tr:last-child td{border-bottom:0}.scroll-table{overflow:auto}
-.status{display:inline-block;padding:4px 8px;border-radius:20px;font-size:10px;font-weight:900}.open{background:#fff7df;color:#92400e}.quote{background:#dbeafe;color:#1d4ed8}.active-status{background:#dcfce7;color:#166534}.complete{background:#e2e8f0;color:#334155}.verified{background:#dcfce7;color:#166534}.private{background:#f1f5f9;color:#475569}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-group{margin-bottom:13px}.form-group label{display:block;font-size:12px;font-weight:850;margin-bottom:5px}.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:7px;background:#fff}.full{grid-column:1/-1}.help{color:var(--muted);font-size:12px}.checks{display:flex;gap:10px;flex-wrap:wrap}.check{border:1px solid var(--border);background:#f8fafc;border-radius:7px;padding:7px 10px;font-size:12px}
-.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 7px;border-radius:20px;background:#eef2ff;color:#3730a3;font-size:10px;font-weight:900}.supplier-card{border:1px solid var(--border);border-radius:10px;padding:15px;margin-bottom:11px}.supplier-head{display:flex;justify-content:space-between;gap:10px}.supplier-name{font-weight:900}.muted{color:var(--muted)}.quote-card{border:1px solid var(--border);border-radius:10px;padding:17px;margin-bottom:12px}.quote-top{display:flex;justify-content:space-between;gap:15px}.quote-price{font-size:21px;font-weight:900}.quote-meta{color:var(--muted);font-size:12px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.progress{height:8px;background:#e2e8f0;border-radius:20px;overflow:hidden}.progress>span{display:block;height:100%;background:var(--green)}
-.chat{border:1px solid var(--border);border-radius:9px;padding:13px;margin-bottom:10px;background:#f8fafc}.chat.mine{background:#fff7df}.chat small{color:var(--muted)}.notice{border-left:4px solid var(--orange);background:#fffbeb;padding:12px 14px;border-radius:6px;font-size:12px;margin-bottom:15px}.success{border-left-color:var(--green);background:#f0fdf4}.danger-note{border-left:4px solid var(--red);background:#fef2f2;padding:12px 14px;border-radius:6px;font-size:12px}
-.modal{display:none;position:fixed;inset:0;background:rgba(2,6,23,.72);z-index:5000;align-items:center;justify-content:center;padding:20px}.modal.active{display:flex}.modal-box{width:100%;max-width:520px;background:#fff;border-radius:14px;padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.3)}.close{float:right;border:0;background:transparent;font-size:25px}.tabs{display:flex;border-bottom:1px solid var(--border);margin:18px 0}.tabs button{flex:1;padding:11px;border:0;background:transparent;font-weight:850;color:var(--muted)}.tabs button.active{color:var(--orange2);border-bottom:3px solid var(--orange)}.demo-box{background:#f8fafc;border-radius:8px;padding:11px;font-size:12px;color:var(--muted);margin-bottom:15px}.toast{position:fixed;right:22px;bottom:22px;background:var(--navy);color:#fff;padding:13px 17px;border-radius:8px;box-shadow:var(--shadow);display:none;z-index:9000;max-width:380px}.toast.show{display:block}.file-list{margin-top:8px;font-size:12px;color:var(--muted)}
-@media(max-width:950px){.nav-menu{display:none}.mobile-menu{display:block}.grid3,.caps{grid-template-columns:1fr 1fr}.strip-inner{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.portal-layout{grid-template-columns:1fr}.sidebar{display:none}.panel-grid{grid-template-columns:1fr}.portal-main{padding:18px}}
-@media(max-width:620px){.hero{padding:65px 5%}.hero h1{font-size:47px}.grid3,.grid2,.caps,.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.portal-top{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:1fr 1fr}.strip-item{border-bottom:1px solid var(--border)}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CNC-HUB is a UK-focused CNC machining job exchange connecting buyers with suitable CNC manufacturing capacity.">
+    <title>CNC-HUB | UK CNC Machining Job Exchange</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        :root {
+            --navy: #07111f;
+            --navy2: #0f1b2d;
+            --orange: #f59e0b;
+            --orange-dark: #d97706;
+            --blue: #2563eb;
+            --green: #16a34a;
+            --red: #dc2626;
+            --bg: #f4f7fa;
+            --card: #fff;
+            --text: #172033;
+            --muted: #64748b;
+            --border: #dbe3ec;
+            --shadow: 0 8px 30px rgba(15, 23, 42, .07);
+            --radius: 12px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+        }
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+        button {
+            cursor: pointer;
+        }
+        a {
+            text-decoration: none;
+        }
+        .hidden {
+            display: none !important;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            height: 72px;
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            cursor: pointer;
+        }
+        .logo span,
+        .accent {
+            color: var(--orange);
+        }
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+        .nav-menu a {
+            color: #475569;
+            font-size: 14px;
+            font-weight: 800;
+        }
+        .nav-menu a:hover {
+            color: var(--orange-dark);
+        }
+        .nav-actions {
+            display: flex;
+            gap: 9px;
+            align-items: center;
+        }
+        .mobile-menu {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 25px;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        .mobile-menu:hover {
+            background: #f1f5f9;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            border: 0;
+            border-radius: 8px;
+            padding: 11px 17px;
+            font-weight: 850;
+            transition: .15s;
+        }
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+        .btn-primary {
+            background: var(--orange);
+            color: #111827;
+        }
+        .btn-primary:hover {
+            background: #fbbf24;
+        }
+        .btn-dark {
+            background: var(--navy);
+            color: #fff;
+        }
+        .btn-outline {
+            background: #fff;
+            border: 1px solid #cbd5e1;
+            color: var(--text);
+        }
+        .btn-blue {
+            background: var(--blue);
+            color: #fff;
+        }
+        .btn-green {
+            background: var(--green);
+            color: #fff;
+        }
+        .btn-danger {
+            background: var(--red);
+            color: #fff;
+        }
+        .btn-small {
+            padding: 7px 10px;
+            font-size: 12px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background:
+                radial-gradient(circle at 84% 22%, rgba(245, 158, 11, .18), transparent 30%),
+                radial-gradient(circle at 18% 82%, rgba(37, 99, 235, .12), transparent 30%),
+                var(--navy);
+            color: #fff;
+            padding: 90px 6%;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-inner {
+            max-width: 1180px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-bg-map {
+            position: absolute;
+            right: -5%;
+            top: 10%;
+            width: 45%;
+            height: 90%;
+            opacity: .10;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-bg-map svg {
+            width: 100%;
+            height: 100%;
+        }
+        .kicker {
+            color: var(--orange);
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: clamp(44px, 7vw, 74px);
+            line-height: .98;
+            letter-spacing: -4px;
+            max-width: 920px;
+            margin: 18px 0 24px;
+        }
+        .hero p {
+            max-width: 780px;
+            color: #cbd5e1;
+            font-size: 19px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+        .hero-note {
+            margin-top: 18px;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        /* ===== STRIP ===== */
+        .strip {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+        }
+        .strip-inner {
+            max-width: 1180px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .strip-item {
+            padding: 22px;
+            border-right: 1px solid var(--border);
+        }
+        .strip-item:last-child {
+            border-right: 0;
+        }
+        .strip-item strong {
+            display: block;
+            font-size: 17px;
+        }
+        .strip-item span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            max-width: 1180px;
+            margin: auto;
+            padding: 72px 5%;
+        }
+        .section-title {
+            font-size: 40px;
+            letter-spacing: -1.5px;
+            margin: 0 0 10px;
+        }
+        .lead {
+            color: var(--muted);
+            max-width: 790px;
+            font-size: 17px;
+        }
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 32px;
+        }
+        .card,
+        .panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+        .card-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background: #fff7df;
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+        .card p {
+            color: var(--muted);
+        }
+
+        /* ===== DARK SECTION ===== */
+        .dark-section {
+            background: var(--navy);
+            color: #fff;
+        }
+        .dark-section .lead {
+            color: #cbd5e1;
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 32px;
+        }
+        .dark-card {
+            background: #101d31;
+            border: 1px solid #27364b;
+            border-radius: var(--radius);
+            padding: 27px;
+        }
+        .dark-card p {
+            color: #cbd5e1;
+        }
+
+        /* ===== CAPABILITIES ===== */
+        .caps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-top: 30px;
+        }
+        .cap {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+        }
+        .cap strong {
+            display: block;
+        }
+        .cap span {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #050a12;
+            color: #cbd5e1;
+            padding: 40px 6%;
+        }
+        .footer-inner {
+            max-width: 1180px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .footer-link {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            color: #fff;
+        }
+
+        /* ===== PORTAL ===== */
+        .portal {
+            display: none;
+            min-height: calc(100vh - 72px);
+            background: #f1f5f9;
+        }
+        .portal.active {
+            display: block;
+        }
+        .portal-layout {
+            display: grid;
+            grid-template-columns: 235px 1fr;
+            min-height: calc(100vh - 72px);
+        }
+        .sidebar {
+            background: var(--navy);
+            color: #fff;
+            padding: 20px 13px;
+        }
+        .side-title {
+            font-size: 18px;
+            font-weight: 900;
+            padding: 10px 14px 23px;
+        }
+        .side-btn {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            color: #cbd5e1;
+            text-align: left;
+            padding: 12px 14px;
+            border-radius: 7px;
+            margin-bottom: 3px;
+            font-weight: 750;
+        }
+        .side-btn:hover,
+        .side-btn.active {
+            background: #17263d;
+            color: #fff;
+        }
+        .portal-main {
+            padding: 28px;
+            overflow: hidden;
+        }
+        .portal-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .portal-top h1 {
+            margin: 0;
+            font-size: 29px;
+        }
+        .portal-user {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+        .stat {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+        }
+        .stat span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+        .stat strong {
+            display: block;
+            font-size: 27px;
+            margin-top: 4px;
+        }
+        .stat.orange strong {
+            color: var(--orange-dark);
+        }
+        .stat.blue strong {
+            color: var(--blue);
+        }
+        .stat.green strong {
+            color: var(--green);
+        }
+
+        /* ===== PANEL GRID ===== */
+        .panel-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 18px;
+        }
+
+        /* ===== TABLE ===== */
+        .table-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .table-head {
+            padding: 18px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .table-head h3 {
+            margin: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th,
+        td {
+            padding: 13px 16px;
+            text-align: left;
+            border-bottom: 1px solid #edf0f3;
+            font-size: 13px;
+        }
+        th {
+            color: var(--muted);
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        tr:last-child td {
+            border-bottom: 0;
+        }
+        .scroll-table {
+            overflow: auto;
+        }
+
+        /* ===== STATUS ===== */
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 900;
+        }
+        .status-open {
+            background: #fff7df;
+            color: #92400e;
+        }
+        .status-quote {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+        .status-active {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .status-complete {
+            background: #e2e8f0;
+            color: #334155;
+        }
+        .status-verified {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .status-private {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        /* ===== BADGE ===== */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 7px;
+            border-radius: 20px;
+            background: #eef2ff;
+            color: #3730a3;
+            font-size: 10px;
+            font-weight: 900;
+        }
+
+        /* ===== FORM ===== */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .form-group {
+            margin-bottom: 13px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 850;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            background: #fff;
+        }
+        .full {
+            grid-column: 1 / -1;
+        }
+        .help {
+            color: var(--muted);
+            font-size: 12px;
+        }
+        .checks {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .check {
+            border: 1px solid var(--border);
+            background: #f8fafc;
+            border-radius: 7px;
+            padding: 7px 10px;
+            font-size: 12px;
+        }
+
+        /* ===== SUPPLIER CARD ===== */
+        .supplier-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 11px;
+            background: #fff;
+        }
+        .supplier-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .supplier-name {
+            font-weight: 900;
+        }
+        .muted {
+            color: var(--muted);
+        }
+
+        /* ===== QUOTE CARD ===== */
+        .quote-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 17px;
+            margin-bottom: 12px;
+            background: #fff;
+        }
+        .quote-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .quote-price {
+            font-size: 21px;
+            font-weight: 900;
+        }
+        .quote-meta {
+            color: var(--muted);
+            font-size: 12px;
+        }
+        .actions {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        /* ===== PROGRESS ===== */
+        .progress {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            min-width: 80px;
+        }
+        .progress>span {
+            display: block;
+            height: 100%;
+            background: var(--green);
+        }
+
+        /* ===== CHAT ===== */
+        .chat {
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 13px;
+            margin-bottom: 10px;
+            background: #f8fafc;
+        }
+        .chat.mine {
+            background: #fff7df;
+        }
+        .chat small {
+            color: var(--muted);
+        }
+
+        /* ===== NOTICE ===== */
+        .notice {
+            border-left: 4px solid var(--orange);
+            background: #fffbeb;
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        .notice.success {
+            border-left-color: var(--green);
+            background: #f0fdf4;
+        }
+        .notice.danger {
+            border-left-color: var(--red);
+            background: #fef2f2;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 6, 23, .72);
+            z-index: 5000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-box {
+            width: 100%;
+            max-width: 520px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .3);
+        }
+        .close {
+            float: right;
+            border: 0;
+            background: transparent;
+            font-size: 25px;
+            padding: 0 6px;
+        }
+        .close:hover {
+            background: #f1f5f9;
+            border-radius: 6px;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            margin: 18px 0;
+        }
+        .tabs button {
+            flex: 1;
+            padding: 11px;
+            border: 0;
+            background: transparent;
+            font-weight: 850;
+            color: var(--muted);
+        }
+        .tabs button.active {
+            color: var(--orange-dark);
+            border-bottom: 3px solid var(--orange);
+        }
+        .demo-box {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 11px;
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            background: var(--navy);
+            color: #fff;
+            padding: 13px 17px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            display: none;
+            z-index: 9000;
+            max-width: 380px;
+        }
+        .toast.show {
+            display: block;
+        }
+
+        /* ===== FILE LIST ===== */
+        .file-list {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* ===== UK MAP (hero decorative) ===== */
+        .uk-map-container {
+            position: absolute;
+            right: 0;
+            top: 10%;
+            width: 50%;
+            height: 85%;
+            opacity: .07;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .uk-map-container svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 950px) {
+            .nav-menu {
+                display: none;
+            }
+            .nav-menu.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 20px 5%;
+                border-bottom: 1px solid var(--border);
+                gap: 14px;
+                box-shadow: var(--shadow);
+                z-index: 999;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .grid3,
+            .caps {
+                grid-template-columns: 1fr 1fr;
+            }
+            .strip-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .portal-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .sidebar.open {
+                display: block;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                bottom: 0;
+                width: 280px;
+                z-index: 998;
+                box-shadow: var(--shadow);
+                overflow-y: auto;
+            }
+            .panel-grid {
+                grid-template-columns: 1fr;
+            }
+            .portal-main {
+                padding: 18px;
+            }
+            .uk-map-container {
+                width: 70%;
+                opacity: .04;
+            }
+        }
+        @media (max-width: 620px) {
+            .hero {
+                padding: 65px 5%;
+            }
+            .hero h1 {
+                font-size: 47px;
+            }
+            .grid3,
+            .grid2,
+            .caps,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full {
+                grid-column: auto;
+            }
+            .portal-top {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .strip-item {
+                border-bottom: 1px solid var(--border);
+            }
+            .uk-map-container {
+                width: 90%;
+                opacity: .03;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div id="publicSite">
-<nav class="navbar">
-  <div class="logo" onclick="showPublic()">CNC<span>-HUB</span></div>
-  <div class="nav-menu">
-    <a href="#how">How it works</a><a href="#capabilities">Capabilities</a><a href="#suppliers">For suppliers</a><a href="#trust">Trust</a>
-  </div>
-  <div class="nav-actions">
-    <button class="btn btn-outline" onclick="openLogin()">Login</button>
-    <button class="btn btn-primary" onclick="openLogin('customer')">Post a CNC Job</button>
-  </div>
-  <button class="mobile-menu" onclick="showToast('Use the buttons above to access the CNC-HUB demo portal.')">☰</button>
-</nav>
+    <!-- =========================================================
+    PUBLIC CNC-HUB WEBSITE
+    ========================================================= -->
 
-<header class="hero">
-  <div class="hero-inner">
-    <div class="kicker">UK CNC machining job exchange</div>
-    <h1>Post one job. Find the right CNC capacity.</h1>
-    <p>Upload your machining requirement once and receive quotations from suitable UK CNC manufacturers. Supplier identities and customer details are controlled rather than exposed as a public directory.</p>
-    <div class="hero-buttons">
-      <button class="btn btn-primary" onclick="openLogin('customer')">Post a CNC Job — Free</button>
-      <button class="btn btn-outline" onclick="openLogin('supplier')">Join as a CNC Supplier</button>
+    <div id="publicSite">
+
+        <nav class="navbar">
+            <div class="logo" onclick="showPublic()">CNC<span>-HUB</span></div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#how">How it works</a>
+                <a href="#capabilities">Capabilities</a>
+                <a href="#suppliers">For suppliers</a>
+                <a href="#trust">Trust</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" onclick="openLogin()">Login</button>
+                <button class="btn btn-primary" onclick="openLogin('customer')">Post a CNC Job</button>
+            </div>
+            <button class="mobile-menu" id="mobileMenuBtn" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+
+        <header class="hero">
+            <!-- Decorative UK map -->
+            <div class="uk-map-container">
+                <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" stroke="#f59e0b" stroke-width="1.5">
+                        <path d="M180,120 L210,100 L260,110 L280,140 L270,180 L230,200 L190,190 L175,160 Z" />
+                        <path d="M300,80 L340,60 L390,80 L400,120 L380,170 L340,190 L300,170 L290,130 Z" />
+                        <path d="M120,250 L160,230 L220,240 L250,280 L230,330 L180,340 L130,320 L110,280 Z" />
+                        <path d="M280,220 L330,200 L390,220 L410,270 L380,320 L320,340 L270,320 L260,270 Z" />
+                        <path d="M150,380 L200,360 L270,370 L290,420 L260,470 L190,480 L140,450 L130,400 Z" />
+                        <path d="M320,380 L380,360 L450,380 L470,430 L430,490 L360,500 L310,480 L300,430 Z" />
+                        <path d="M180,520 L240,500 L310,520 L330,570 L290,620 L220,630 L160,610 L150,560 Z" />
+                        <path d="M360,540 L420,520 L480,540 L500,590 L460,640 L400,650 L350,630 L340,580 Z" />
+                    </g>
+                    <g fill="#f59e0b" opacity=".6">
+                        <circle cx="230" cy="150" r="5" />
+                        <circle cx="350" cy="140" r="5" />
+                        <circle cx="180" cy="290" r="5" />
+                        <circle cx="320" cy="280" r="5" />
+                        <circle cx="210" cy="430" r="5" />
+                        <circle cx="400" cy="440" r="5" />
+                        <circle cx="250" cy="570" r="5" />
+                        <circle cx="420" cy="590" r="5" />
+                        <circle cx="310" cy="700" r="5" />
+                    </g>
+                    <g stroke="#f59e0b" stroke-width="0.8" opacity=".3">
+                        <line x1="230" y1="150" x2="350" y2="140" />
+                        <line x1="350" y1="140" x2="320" y2="280" />
+                        <line x1="320" y1="280" x2="400" y2="440" />
+                        <line x1="400" y1="440" x2="420" y2="590" />
+                        <line x1="230" y1="150" x2="180" y2="290" />
+                        <line x1="180" y1="290" x2="210" y2="430" />
+                        <line x1="210" y1="430" x2="250" y2="570" />
+                        <line x1="250" y1="570" x2="310" y2="700" />
+                        <line x1="320" y1="280" x2="210" y2="430" />
+                        <line x1="400" y1="440" x2="250" y2="570" />
+                        <line x1="350" y1="140" x2="230" y2="150" />
+                        <line x1="420" y1="590" x2="310" y2="700" />
+                    </g>
+                    <text x="60" y="760" fill="#f59e0b" font-size="14" font-weight="900" opacity=".5">UK CNC NETWORK</text>
+                </svg>
+            </div>
+
+            <div class="hero-inner">
+                <div class="kicker">UK CNC machining job exchange</div>
+                <h1>Post one job. Find the right CNC capacity.</h1>
+                <p>Upload your machining requirement once and receive quotations from suitable UK CNC manufacturers. Supplier identities and customer details are controlled rather than exposed as a public directory.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openLogin('customer')">Post a CNC Job — Free</button>
+                    <button class="btn btn-outline" onclick="openLogin('supplier')">Join as a CNC Supplier</button>
+                </div>
+                <div class="hero-note">CNC milling • turning • mill-turn • 3/4/5-axis • prototypes • production</div>
+            </div>
+        </header>
+
+        <section class="strip">
+            <div class="strip-inner">
+                <div class="strip-item"><strong>CNC Milling</strong><span>3-axis, 4-axis and 5-axis work</span></div>
+                <div class="strip-item"><strong>CNC Turning</strong><span>Turning and mill-turn components</span></div>
+                <div class="strip-item"><strong>Verified capabilities</strong><span>Machines, materials and certifications</span></div>
+                <div class="strip-item"><strong>Controlled disclosure</strong><span>Information shared only when appropriate</span></div>
+            </div>
+        </section>
+
+        <section id="how" class="section">
+            <h2 class="section-title">A simpler way to source CNC machining.</h2>
+            <p class="lead">Post the technical requirement once. CNC-HUB is designed to match it with relevant machining capability and keep the early-stage exchange inside the platform.</p>
+            <div class="grid3">
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>1. Create an RFQ</h3>
+                    <p>Specify process, quantity, material, tolerances, finish, inspection and delivery requirements. Upload drawings or CAD files.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>2. Suitable suppliers review</h3>
+                    <p>Suppliers see a controlled job reference and capability information rather than an open directory of customer identities.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✓</div>
+                    <h3>3. Compare and award</h3>
+                    <p>Compare price, lead time, verified capability, rating and delivery history, then accept the quotation through CNC-HUB.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="capabilities" class="section">
+            <h2 class="section-title">Built around real CNC requirements.</h2>
+            <p class="lead">The platform focuses on the information a machine shop actually needs to decide whether a job fits its equipment and capacity.</p>
+            <div class="caps">
+                <div class="cap"><strong>3-axis milling</strong><span>General machining</span></div>
+                <div class="cap"><strong>4-axis milling</strong><span>Indexed multi-sided work</span></div>
+                <div class="cap"><strong>5-axis positional</strong><span>3+2 machining</span></div>
+                <div class="cap"><strong>5-axis simultaneous</strong><span>Complex geometries</span></div>
+                <div class="cap"><strong>CNC turning</strong><span>Turned components</span></div>
+                <div class="cap"><strong>Mill-turn</strong><span>Combined processes</span></div>
+                <div class="cap"><strong>Prototype</strong><span>One-off and development work</span></div>
+                <div class="cap"><strong>Production</strong><span>Repeat batch machining</span></div>
+            </div>
+        </section>
+
+        <section id="suppliers" class="dark-section">
+            <div class="section">
+                <h2 class="section-title">For CNC manufacturers</h2>
+                <p class="lead">Turn suitable spare capacity into new work without publishing your direct contact details on a public directory.</p>
+                <div class="grid2">
+                    <div class="dark-card">
+                        <h3>Capability-first matching</h3>
+                        <p>Show machines, work envelope, materials, processes, tolerances, inspection and certifications. Buyers can evaluate capability without being handed your phone number or website.</p>
+                    </div>
+                    <div class="dark-card">
+                        <h3>Pay for successful work</h3>
+                        <p>The demo is designed around a simple "no job, no charge" principle. A production system can add a success fee or other commercial model later.</p>
+                    </div>
+                    <div class="dark-card">
+                        <h3>Controlled communication</h3>
+                        <p>Use CNC-HUB messaging. Contact details, URLs and obvious attempts to move the conversation off-platform can be detected and restricted.</p>
+                    </div>
+                    <div class="dark-card">
+                        <h3>Reputation that matters</h3>
+                        <p>Build a record of completed jobs, on-time delivery, customer ratings and verified certifications rather than relying only on a company description.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trust" class="section">
+            <h2 class="section-title">Trust without exposing the network.</h2>
+            <p class="lead">CNC-HUB can be rich in technical information while remaining deliberately light on personally identifying and bypass-enabling information.</p>
+            <div class="grid3">
+                <div class="card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Anonymous early-stage profiles</h3>
+                    <p>Suppliers can appear as verified manufacturing partners with capability, region, rating and performance data rather than a public contact card.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Document protection</h3>
+                    <p>Technical files can be watermarked and, in a production backend, scanned for names, addresses, email addresses and other identifying content before controlled release.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💬</div>
+                    <h3>Platform messaging</h3>
+                    <p>Keep the commercial conversation in one place and detect phone numbers, email addresses, URLs and common off-platform contact attempts.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-inner">
+                <div>
+                    <div class="logo">CNC<span>-HUB</span></div>
+                    <p>UK CNC machining job exchange.</p>
+                    <p>Post CNC work. Find CNC capacity.</p>
+                </div>
+                <div>
+                    <strong>Contact</strong>
+                    <p><a class="footer-link" href="mailto:wheelswithnuts@gmail.com">wheelswithnuts@gmail.com</a></p>
+                    <p><a class="footer-link" href="tel:+447305620893">07305 620 893</a></p>
+                    <p>Wellingborough, UK</p>
+                </div>
+                <div>
+                    <strong>Demo</strong>
+                    <p>Buyer and supplier workflows are available from the demo login.</p>
+                    <p>Real email, authentication, storage and payments require a production backend.</p>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div class="hero-note">CNC milling • turning • mill-turn • 3/4/5-axis • prototypes • production</div>
-  </div>
-</header>
 
-<section class="strip"><div class="strip-inner">
-  <div class="strip-item"><strong>CNC Milling</strong><span>3-axis, 4-axis and 5-axis work</span></div>
-  <div class="strip-item"><strong>CNC Turning</strong><span>Turning and mill-turn components</span></div>
-  <div class="strip-item"><strong>Verified capabilities</strong><span>Machines, materials and certifications</span></div>
-  <div class="strip-item"><strong>Controlled disclosure</strong><span>Information shared only when appropriate</span></div>
-</div></section>
+    <!-- =========================================================
+    CNC-HUB PORTAL
+    ========================================================= -->
 
-<section id="how" class="section">
-  <h2 class="section-title">A simpler way to source CNC machining.</h2>
-  <p class="lead">Post the technical requirement once. CNC-HUB is designed to match it with relevant machining capability and keep the early-stage exchange inside the platform.</p>
-  <div class="grid3">
-    <div class="card"><div class="card-icon">📋</div><h3>1. Create an RFQ</h3><p>Specify process, quantity, material, tolerances, finish, inspection and delivery requirements. Upload drawings or CAD files.</p></div>
-    <div class="card"><div class="card-icon">⚙️</div><h3>2. Suitable suppliers review</h3><p>Suppliers see a controlled job reference and capability information rather than an open directory of customer identities.</p></div>
-    <div class="card"><div class="card-icon">✓</div><h3>3. Compare and award</h3><p>Compare price, lead time, verified capability, rating and delivery history, then accept the quotation through CNC-HUB.</p></div>
-  </div>
-</section>
+    <div id="portal" class="portal">
+        <div class="portal-layout">
+            <aside class="sidebar" id="sidebar">
+                <div class="side-title">CNC<span class="accent">-HUB</span></div>
+                <button class="side-btn active" data-panel="dashboard" onclick="showPanel('dashboard')">📊 Dashboard</button>
+                <button class="side-btn" data-panel="jobs" onclick="showPanel('jobs')">📋 My CNC Jobs</button>
+                <button class="side-btn" data-panel="market" onclick="showPanel('market')">🔎 Matched Jobs</button>
+                <button class="side-btn" data-panel="new-job" onclick="showPanel('new-job')">➕ Post CNC Job</button>
+                <button class="side-btn" data-panel="quotes" onclick="showPanel('quotes')">💷 Quotes</button>
+                <button class="side-btn" data-panel="orders" onclick="showPanel('orders')">🚚 Orders</button>
+                <button class="side-btn" data-panel="messages" onclick="showPanel('messages')">💬 Messages</button>
+                <button class="side-btn" data-panel="profile" onclick="showPanel('profile')">👤 Profile</button>
+                <br>
+                <button class="side-btn" onclick="logout()">← Logout</button>
+            </aside>
 
-<section id="capabilities" class="section">
-  <h2 class="section-title">Built around real CNC requirements.</h2>
-  <p class="lead">The platform focuses on the information a machine shop actually needs to decide whether a job fits its equipment and capacity.</p>
-  <div class="caps">
-    <div class="cap"><strong>3-axis milling</strong><span>General machining</span></div><div class="cap"><strong>4-axis milling</strong><span>Indexed multi-sided work</span></div><div class="cap"><strong>5-axis positional</strong><span>3+2 machining</span></div><div class="cap"><strong>5-axis simultaneous</strong><span>Complex geometries</span></div>
-    <div class="cap"><strong>CNC turning</strong><span>Turned components</span></div><div class="cap"><strong>Mill-turn</strong><span>Combined processes</span></div><div class="cap"><strong>Prototype</strong><span>One-off and development work</span></div><div class="cap"><strong>Production</strong><span>Repeat batch machining</span></div>
-  </div>
-</section>
+            <main class="portal-main">
+                <div class="portal-top">
+                    <div>
+                        <h1 id="portalTitle">CNC Dashboard</h1>
+                        <div class="portal-user">Signed in as <strong id="portalName">Demo Account</strong></div>
+                    </div>
+                    <button class="btn btn-primary" onclick="showPanel('new-job')">+ Post CNC Job</button>
+                </div>
 
-<section id="suppliers" class="dark-section"><div class="section">
-  <h2 class="section-title">For CNC manufacturers</h2>
-  <p class="lead">Turn suitable spare capacity into new work without publishing your direct contact details on a public directory.</p>
-  <div class="grid2">
-    <div class="dark-card"><h3>Capability-first matching</h3><p>Show machines, work envelope, materials, processes, tolerances, inspection and certifications. Buyers can evaluate capability without being handed your phone number or website.</p></div>
-    <div class="dark-card"><h3>Pay for successful work</h3><p>The demo is designed around a simple “no job, no charge” principle. A production system can add a success fee or other commercial model later.</p></div>
-    <div class="dark-card"><h3>Controlled communication</h3><p>Use CNC-HUB messaging. Contact details, URLs and obvious attempts to move the conversation off-platform can be detected and restricted.</p></div>
-    <div class="dark-card"><h3>Reputation that matters</h3><p>Build a record of completed jobs, on-time delivery, customer ratings and verified certifications rather than relying only on a company description.</p></div>
-  </div>
-</div></section>
+                <!-- DASHBOARD -->
+                <section id="panel-dashboard" class="portal-panel active">
+                    <div class="stats">
+                        <div class="stat orange"><span>Open CNC jobs</span><strong id="openJobs">2</strong></div>
+                        <div class="stat blue"><span>Quotes / opportunities</span><strong id="quoteCount">7</strong></div>
+                        <div class="stat green"><span>Active orders</span><strong>2</strong></div>
+                        <div class="stat"><span>Completed jobs</span><strong>14</strong></div>
+                    </div>
+                    <div class="panel-grid">
+                        <div class="table-card">
+                            <div class="table-head">
+                                <h3>Recent CNC jobs</h3>
+                                <button class="btn btn-outline btn-small" onclick="showPanel('jobs')">View all</button>
+                            </div>
+                            <div class="scroll-table">
+                                <table>
+                                    <thead>
+                                        <tr><th>Reference</th><th>Process</th><th>Qty</th><th>Status</th></tr>
+                                    </thead>
+                                    <tbody id="dashboardJobs"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="panel">
+                                <h3>Quick actions</h3>
+                                <button class="btn btn-primary" style="width:100%;margin-bottom:8px" onclick="showPanel('new-job')">+ Post CNC Job</button>
+                                <button class="btn btn-outline" style="width:100%;margin-bottom:8px" onclick="showPanel('market')">View matched work</button>
+                                <button class="btn btn-outline" style="width:100%" onclick="showPanel('messages')">Open messages</button>
+                            </div>
+                            <div class="panel">
+                                <h3>Privacy status</h3>
+                                <p><span class="status status-verified">✓ Controlled profile</span></p>
+                                <p class="muted" style="font-size:12px">Public profiles do not display direct phone numbers, email addresses or exact street addresses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-<section id="trust" class="section">
-  <h2 class="section-title">Trust without exposing the network.</h2>
-  <p class="lead">CNC-HUB can be rich in technical information while remaining deliberately light on personally identifying and bypass-enabling information.</p>
-  <div class="grid3">
-    <div class="card"><div class="card-icon">🔒</div><h3>Anonymous early-stage profiles</h3><p>Suppliers can appear as verified manufacturing partners with capability, region, rating and performance data rather than a public contact card.</p></div>
-    <div class="card"><div class="card-icon">🛡️</div><h3>Document protection</h3><p>Technical files can be watermarked and, in a production backend, scanned for names, addresses, email addresses and other identifying content before controlled release.</p></div>
-    <div class="card"><div class="card-icon">💬</div><h3>Platform messaging</h3><p>Keep the commercial conversation in one place and detect phone numbers, email addresses, URLs and common off-platform contact attempts.</p></div>
-  </div>
-</section>
+                <!-- JOBS -->
+                <section id="panel-jobs" class="portal-panel">
+                    <div class="table-card">
+                        <div class="table-head">
+                            <h3>My CNC jobs</h3>
+                            <button class="btn btn-primary btn-small" onclick="showPanel('new-job')">+ New job</button>
+                        </div>
+                        <div class="scroll-table">
+                            <table>
+                                <thead>
+                                    <tr><th>Reference</th><th>Component</th><th>Process</th><th>Qty</th><th>Delivery</th><th>Status</th></tr>
+                                </thead>
+                                <tbody id="jobsTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
 
-<footer><div class="footer-inner">
-  <div><div class="logo">CNC<span>-HUB</span></div><p>UK CNC machining job exchange.</p><p>Post CNC work. Find CNC capacity.</p></div>
-  <div><strong>Contact</strong><p><a class="footer-link" href="mailto:wheelswithnuts@gmail.com">wheelswithnuts@gmail.com</a></p><p><a class="footer-link" href="tel:+447305620893">07305 620 893</a></p><p>Wellingborough, UK</p></div>
-  <div><strong>Demo</strong><p>Buyer and supplier workflows are available from the demo login.</p><p>Real email, authentication, storage and payments require a production backend.</p></div>
-</div></footer>
-</div>
+                <!-- MATCHED JOBS (MARKET) -->
+                <section id="panel-market" class="portal-panel">
+                    <div class="notice"><strong>Supplier privacy:</strong> matched jobs show a controlled buyer reference. Direct buyer contact details are not displayed at the RFQ stage.</div>
+                    <div id="marketJobs"></div>
+                </section>
 
-<div id="portal" class="portal">
-<div class="portal-layout">
-<aside class="sidebar">
-  <div class="side-title">CNC<span class="accent">-HUB</span></div>
-  <button class="side-btn active" data-panel="dashboard" onclick="showPanel('dashboard')">📊 Dashboard</button>
-  <button class="side-btn" data-panel="jobs" onclick="showPanel('jobs')">📋 My CNC Jobs</button>
-  <button class="side-btn" data-panel="market" onclick="showPanel('market')">🔎 Matched Jobs</button>
-  <button class="side-btn" data-panel="new-job" onclick="showPanel('new-job')">➕ Post CNC Job</button>
-  <button class="side-btn" data-panel="quotes" onclick="showPanel('quotes')">💷 Quotes</button>
-  <button class="side-btn" data-panel="orders" onclick="showPanel('orders')">🚚 Orders</button>
-  <button class="side-btn" data-panel="messages" onclick="showPanel('messages')">💬 Messages</button>
-  <button class="side-btn" data-panel="profile" onclick="showPanel('profile')">👤 Profile</button>
-  <br><button class="side-btn" onclick="logout()">← Logout</button>
-</aside>
+                <!-- NEW JOB -->
+                <section id="panel-new-job" class="portal-panel">
+                    <div class="panel">
+                        <h3>Post a CNC machining job</h3>
+                        <p class="muted">Provide enough technical detail for suitable manufacturers to assess the work.</p>
+                        <form id="newJobForm" onsubmit="createJob(event)">
+                            <div class="form-grid">
+                                <div class="form-group"><label>Job title</label><input id="jobTitle" required placeholder="e.g. Aluminium motor housing"></div>
+                                <div class="form-group"><label>CNC process</label>
+                                    <select id="jobProcess" required>
+                                        <option value="">Select</option>
+                                        <option>3-Axis Milling</option>
+                                        <option>4-Axis Milling</option>
+                                        <option>5-Axis Positional</option>
+                                        <option>5-Axis Simultaneous</option>
+                                        <option>CNC Turning</option>
+                                        <option>Mill-Turn</option>
+                                    </select>
+                                </div>
+                                <div class="form-group"><label>Quantity</label><input id="jobQuantity" type="number" min="1" required placeholder="25"></div>
+                                <div class="form-group"><label>Material grade</label><input id="jobMaterial" required placeholder="e.g. Aluminium 6082-T6"></div>
+                                <div class="form-group"><label>Required delivery date</label><input id="jobDate" type="date"></div>
+                                <div class="form-group"><label>Target price (optional)</label><input id="jobPrice" placeholder="e.g. £1,500"></div>
+                                <div class="form-group"><label>Annual volume (optional)</label><input id="jobAnnual" type="number" min="0" placeholder="e.g. 500"></div>
+                                <div class="form-group"><label>Inspection</label>
+                                    <select id="jobInspection">
+                                        <option>Standard inspection</option>
+                                        <option>Inspection report</option>
+                                        <option>CMM report</option>
+                                        <option>First Article Inspection</option>
+                                    </select>
+                                </div>
+                                <div class="form-group"><label>Surface finish</label><input id="jobFinish" placeholder="e.g. Anodised, Ra 1.6"></div>
+                                <div class="form-group"><label>Required certification</label>
+                                    <select id="jobCert">
+                                        <option>None specified</option>
+                                        <option>ISO 9001</option>
+                                        <option>AS9100</option>
+                                        <option>ISO 13485</option>
+                                        <option>IATF 16949</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full"><label>Job description</label>
+                                    <textarea id="jobDescription" rows="6" required placeholder="Dimensions, tolerances, critical features, tooling, finish, inspection, packaging and other requirements. Do not put personal contact details here."></textarea>
+                                </div>
+                                <div class="form-group full"><label>Technical files</label>
+                                    <input id="jobFiles" type="file" multiple accept=".pdf,.step,.stp,.stl,.dxf,.dwg,.igs,.iges,.zip">
+                                    <div id="fileList" class="file-list">Files are shown locally in this demo only. A production system should store them privately and scan/watermark them server-side.</div>
+                                </div>
+                                <div class="form-group full"><label>Disclosure</label>
+                                    <select id="jobConfidentiality">
+                                        <option>Controlled disclosure</option>
+                                        <option>NDA required before technical disclosure</option>
+                                        <option>Standard CNC-HUB confidentiality</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full">
+                                    <label><input id="jobAgree" type="checkbox" required> I confirm that the job description does not intentionally contain direct contact details.</label>
+                                </div>
+                                <div class="form-group full"><button class="btn btn-primary" type="submit">Publish CNC Job</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
 
-<main class="portal-main">
-<div class="portal-top"><div><h1 id="portalTitle">CNC Dashboard</h1><div class="portal-user">Signed in as <strong id="portalName">Demo Account</strong></div></div><button class="btn btn-primary" onclick="showPanel('new-job')">+ Post CNC Job</button></div>
+                <!-- QUOTES -->
+                <section id="panel-quotes" class="portal-panel">
+                    <div class="panel">
+                        <h3>CNC quotations</h3>
+                        <p class="muted">Supplier identities are represented by controlled profiles until disclosure is appropriate.</p>
+                        <div id="quotesList"></div>
+                    </div>
+                </section>
 
-<section id="panel-dashboard" class="portal-panel active">
-  <div class="stats">
-    <div class="stat orange"><span>Open CNC jobs</span><strong id="openJobs">2</strong></div>
-    <div class="stat blue"><span>Quotes / opportunities</span><strong id="quoteCount">7</strong></div>
-    <div class="stat green"><span>Active orders</span><strong>2</strong></div>
-    <div class="stat"><span>Completed jobs</span><strong>14</strong></div>
-  </div>
-  <div class="panel-grid">
-    <div class="table-card"><div class="table-head"><h3>Recent CNC jobs</h3><button class="btn btn-outline btn-small" onclick="showPanel('jobs')">View all</button></div>
-      <div class="scroll-table"><table><thead><tr><th>Reference</th><th>Process</th><th>Qty</th><th>Status</th></tr></thead><tbody id="dashboardJobs"></tbody></table></div>
+                <!-- ORDERS -->
+                <section id="panel-orders" class="portal-panel">
+                    <div class="table-card">
+                        <div class="table-head"><h3>Orders</h3></div>
+                        <div class="scroll-table">
+                            <table>
+                                <thead>
+                                    <tr><th>Order</th><th>Job</th><th>Supplier</th><th>Value</th><th>Progress</th><th>Status</th></tr>
+                                </thead>
+                                <tbody id="ordersTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MESSAGES -->
+                <section id="panel-messages" class="portal-panel">
+                    <div class="panel-grid">
+                        <div class="panel">
+                            <h3>Messages</h3>
+                            <div id="messageList"></div>
+                        </div>
+                        <div class="panel">
+                            <h3>Send message</h3>
+                            <div class="notice">CNC-HUB checks messages for phone numbers, email addresses, URLs and common off-platform contact requests.</div>
+                            <div class="form-group"><label>Job reference</label><select id="messageJob"></select></div>
+                            <div class="form-group"><label>Recipient</label><select id="messageRecipient"><option>Matched manufacturing partner</option><option>CNC-HUB Support</option></select></div>
+                            <div class="form-group"><label>Message</label><textarea id="messageText" rows="7" placeholder="Ask a technical or commercial question. Keep contact details inside CNC-HUB."></textarea></div>
+                            <button class="btn btn-primary" onclick="sendMessage()">Send securely</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PROFILE -->
+                <section id="panel-profile" class="portal-panel">
+                    <div class="panel">
+                        <h3>Controlled CNC profile</h3>
+                        <p class="muted">Technical capability is visible; direct contact information remains private.</p>
+                        <div class="notice success"><strong>Public profile preview:</strong> only the information marked as public below is exposed to the other side of an RFQ.</div>
+                        <form onsubmit="saveProfile(event)">
+                            <div class="form-grid">
+                                <div class="form-group"><label>Display name</label><input id="profileDisplay" value="Verified CNC Manufacturing Partner #1047"></div>
+                                <div class="form-group"><label>Region</label>
+                                    <select id="profileRegion">
+                                        <option>East Midlands</option><option>West Midlands</option><option>East of England</option>
+                                        <option>Yorkshire & Humber</option><option>North West</option><option>South East</option>
+                                        <option>South West</option><option>Scotland</option><option>Wales</option><option>Northern Ireland</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full"><label>Public capabilities</label>
+                                    <div class="checks">
+                                        <span class="check">✓ 3-axis milling</span>
+                                        <span class="check">✓ 5-axis positional</span>
+                                        <span class="check">✓ CNC turning</span>
+                                        <span class="check">✓ Mill-turn</span>
+                                    </div>
+                                </div>
+                                <div class="form-group"><label>Machine envelope</label><input id="profileEnvelope" value="1,000 × 600 × 600 mm"></div>
+                                <div class="form-group"><label>Typical tolerance</label><input id="profileTolerance" value="±0.01 mm"></div>
+                                <div class="form-group"><label>Materials</label><input id="profileMaterials" value="Aluminium, stainless, mild steel, titanium"></div>
+                                <div class="form-group"><label>Inspection</label><input id="profileInspection" value="CMM, dimensional reports"></div>
+                                <div class="form-group full"><label>Certifications</label>
+                                    <div class="checks">
+                                        <span class="check">✓ ISO 9001 verified</span>
+                                        <span class="check">✓ Company verified</span>
+                                        <span class="check">✓ Capability reviewed</span>
+                                    </div>
+                                </div>
+                                <div class="form-group full"><label>Private contact email</label>
+                                    <input id="profileEmail" type="email" value="demo@cnchub.co.uk">
+                                    <div class="help">Stored privately in a production backend. It is never displayed in the public supplier profile.</div>
+                                </div>
+                                <div class="form-group full"><label>Private phone</label>
+                                    <input id="profilePhone" value="07305 620 893">
+                                    <div class="help">Private contact details are not shown to buyers during the RFQ stage.</div>
+                                </div>
+                                <div class="form-group full"><button class="btn btn-primary" type="submit">Save profile</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
-    <div>
-      <div class="panel"><h3>Quick actions</h3><button class="btn btn-primary" style="width:100%;margin-bottom:8px" onclick="showPanel('new-job')">+ Post CNC Job</button><button class="btn btn-outline" style="width:100%;margin-bottom:8px" onclick="showPanel('market')">View matched work</button><button class="btn btn-outline" style="width:100%" onclick="showPanel('messages')">Open messages</button></div>
-      <div class="panel"><h3>Privacy status</h3><p><span class="status verified">✓ Controlled profile</span></p><p class="muted" style="font-size:12px">Public profiles do not display direct phone numbers, email addresses or exact street addresses.</p></div>
+
+    <!-- =========================================================
+    LOGIN MODAL
+    ========================================================= -->
+
+    <div id="loginModal" class="modal">
+        <div class="modal-box">
+            <button class="close" onclick="closeLogin()">×</button>
+            <h2>CNC-HUB</h2>
+            <p class="muted">Access the CNC job exchange.</p>
+            <div class="tabs">
+                <button id="customerTab" class="active" onclick="setLoginType('customer')">CNC Customer</button>
+                <button id="supplierTab" onclick="setLoginType('supplier')">CNC Supplier</button>
+            </div>
+            <div class="demo-box">
+                <strong>Demo account</strong><br>
+                Email: <a href="mailto:demo@cnchub.co.uk">demo@cnchub.co.uk</a><br>
+                Password: <strong>demo123</strong><br><br>
+                This demo intentionally keeps the credentials visible so you can test the site. Replace this with secure authentication before launch.
+            </div>
+            <form onsubmit="login(event)">
+                <div class="form-group"><label>Email address</label><input id="loginEmail" type="email" value="demo@cnchub.co.uk" required></div>
+                <div class="form-group"><label>Password</label><input id="loginPassword" type="password" value="demo123" required></div>
+                <button class="btn btn-primary" style="width:100%" type="submit">Login</button>
+            </form>
+            <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:14px;">Production registration should use verified email, password hashing, rate limits and server-side sessions.</p>
+        </div>
     </div>
-  </div>
-</section>
 
-<section id="panel-jobs" class="portal-panel"><div class="table-card"><div class="table-head"><h3>My CNC jobs</h3><button class="btn btn-primary btn-small" onclick="showPanel('new-job')">+ New job</button></div><div class="scroll-table"><table><thead><tr><th>Reference</th><th>Component</th><th>Process</th><th>Qty</th><th>Delivery</th><th>Status</th></tr></thead><tbody id="jobsTable"></tbody></table></div></div></section>
+    <!-- =========================================================
+    TOAST
+    ========================================================= -->
 
-<section id="panel-market" class="portal-panel">
-  <div class="notice"><strong>Supplier privacy:</strong> matched jobs show a controlled buyer reference. Direct buyer contact details are not displayed at the RFQ stage.</div>
-  <div id="marketJobs"></div>
-</section>
+    <div id="toast" class="toast"></div>
 
-<section id="panel-new-job" class="portal-panel"><div class="panel">
-  <h3>Post a CNC machining job</h3><p class="muted">Provide enough technical detail for suitable manufacturers to assess the work.</p>
-  <form id="newJobForm" onsubmit="createJob(event)">
-    <div class="form-grid">
-      <div class="form-group"><label>Job title</label><input id="jobTitle" required placeholder="e.g. Aluminium motor housing"></div>
-      <div class="form-group"><label>CNC process</label><select id="jobProcess" required><option value="">Select</option><option>3-Axis Milling</option><option>4-Axis Milling</option><option>5-Axis Positional</option><option>5-Axis Simultaneous</option><option>CNC Turning</option><option>Mill-Turn</option></select></div>
-      <div class="form-group"><label>Quantity</label><input id="jobQuantity" type="number" min="1" required placeholder="25"></div>
-      <div class="form-group"><label>Material grade</label><input id="jobMaterial" required placeholder="e.g. Aluminium 6082-T6"></div>
-      <div class="form-group"><label>Required delivery date</label><input id="jobDate" type="date"></div>
-      <div class="form-group"><label>Target price (optional)</label><input id="jobPrice" placeholder="e.g. £1,500"></div>
-      <div class="form-group"><label>Annual volume (optional)</label><input id="jobAnnual" type="number" min="0" placeholder="e.g. 500"></div>
-      <div class="form-group"><label>Inspection</label><select id="jobInspection"><option>Standard inspection</option><option>Inspection report</option><option>CMM report</option><option>First Article Inspection</option></select></div>
-      <div class="form-group"><label>Surface finish</label><input id="jobFinish" placeholder="e.g. Anodised, Ra 1.6"></div>
-      <div class="form-group"><label>Required certification</label><select id="jobCert"><option>None specified</option><option>ISO 9001</option><option>AS9100</option><option>ISO 13485</option><option>IATF 16949</option></select></div>
-      <div class="form-group full"><label>Job description</label><textarea id="jobDescription" rows="6" required placeholder="Dimensions, tolerances, critical features, tooling, finish, inspection, packaging and other requirements. Do not put personal contact details here."></textarea></div>
-      <div class="form-group full"><label>Technical files</label><input id="jobFiles" type="file" multiple accept=".pdf,.step,.stp,.stl,.dxf,.dwg,.igs,.iges,.zip"><div id="fileList" class="file-list">Files are shown locally in this demo only. A production system should store them privately and scan/watermark them server-side.</div></div>
-      <div class="form-group full"><label>Disclosure</label><select id="jobConfidentiality"><option>Controlled disclosure</option><option>NDA required before technical disclosure</option><option>Standard CNC-HUB confidentiality</option></select></div>
-      <div class="form-group full"><label><input id="jobAgree" type="checkbox" required> I confirm that the job description does not intentionally contain direct contact details.</label></div>
-      <div class="form-group full"><button class="btn btn-primary" type="submit">Publish CNC Job</button></div>
-    </div>
-  </form>
-</div></section>
+    <!-- =========================================================
+    JAVASCRIPT
+    ========================================================= -->
 
-<section id="panel-quotes" class="portal-panel"><div class="panel">
-  <h3>CNC quotations</h3><p class="muted">Supplier identities are represented by controlled profiles until disclosure is appropriate.</p>
-  <div id="quotesList"></div>
-</div></section>
+    <script>
+        "use strict";
 
-<section id="panel-orders" class="portal-panel"><div class="table-card"><div class="table-head"><h3>Orders</h3></div><div class="scroll-table"><table><thead><tr><th>Order</th><th>Job</th><th>Supplier</th><th>Value</th><th>Progress</th><th>Status</th></tr></thead><tbody id="ordersTable"></tbody></table></div></div></section>
+        /* =========================================================
+           CNC-HUB DEMO — merged from two prototypes
+           ========================================================= */
 
-<section id="panel-messages" class="portal-panel"><div class="panel-grid">
-  <div class="panel"><h3>Messages</h3><div id="messageList"></div></div>
-  <div class="panel"><h3>Send message</h3><div class="notice">CNC-HUB checks messages for phone numbers, email addresses, URLs and common off-platform contact requests.</div>
-    <div class="form-group"><label>Job reference</label><select id="messageJob"></select></div>
-    <div class="form-group"><label>Recipient</label><select id="messageRecipient"><option>Matched manufacturing partner</option><option>CNC-HUB Support</option></select></div>
-    <div class="form-group"><label>Message</label><textarea id="messageText" rows="7" placeholder="Ask a technical or commercial question. Keep contact details inside CNC-HUB."></textarea></div>
-    <button class="btn btn-primary" onclick="sendMessage()">Send securely</button>
-  </div>
-</div></section>
+        const DEMO_EMAIL = "demo@cnchub.co.uk";
+        const DEMO_PASSWORD = "demo123";
+        let loginType = "customer";
+        let currentUser = "Demo CNC Customer";
 
-<section id="panel-profile" class="portal-panel"><div class="panel">
-  <h3>Controlled CNC profile</h3>
-  <p class="muted">Technical capability is visible; direct contact information remains private.</p>
-  <div class="notice success"><strong>Public profile preview:</strong> only the information marked as public below is exposed to the other side of an RFQ.</div>
-  <form onsubmit="saveProfile(event)">
-    <div class="form-grid">
-      <div class="form-group"><label>Display name</label><input id="profileDisplay" value="Verified CNC Manufacturing Partner #1047"></div>
-      <div class="form-group"><label>Region</label><select id="profileRegion"><option>East Midlands</option><option>West Midlands</option><option>East of England</option><option>Yorkshire & Humber</option><option>North West</option><option>South East</option><option>South West</option><option>Scotland</option><option>Wales</option><option>Northern Ireland</option></select></div>
-      <div class="form-group full"><label>Public capabilities</label><div class="checks"><span class="check">✓ 3-axis milling</span><span class="check">✓ 5-axis positional</span><span class="check">✓ CNC turning</span><span class="check">✓ Mill-turn</span></div></div>
-      <div class="form-group"><label>Machine envelope</label><input id="profileEnvelope" value="1,000 × 600 × 600 mm"></div>
-      <div class="form-group"><label>Typical tolerance</label><input id="profileTolerance" value="±0.01 mm"></div>
-      <div class="form-group"><label>Materials</label><input id="profileMaterials" value="Aluminium, stainless, mild steel, titanium"></div>
-      <div class="form-group"><label>Inspection</label><input id="profileInspection" value="CMM, dimensional reports"></div>
-      <div class="form-group full"><label>Certifications</label><div class="checks"><span class="check">✓ ISO 9001 verified</span><span class="check">✓ Company verified</span><span class="check">✓ Capability reviewed</span></div></div>
-      <div class="form-group full"><label>Private contact email</label><input id="profileEmail" type="email" value="demo@cnchub.co.uk"><div class="help">Stored privately in a production backend. It is never displayed in the public supplier profile.</div></div>
-      <div class="form-group full"><label>Private phone</label><input id="profilePhone" value="07305 620 893"><div class="help">Private contact details are not shown to buyers during the RFQ stage.</div></div>
-      <div class="form-group full"><button class="btn btn-primary" type="submit">Save profile</button></div>
-    </div>
-  </form>
-</div></section>
-</main></div></div>
+        // ----- DATA -----
+        let jobs = [
+            { id: "CH-1001", title: "Aluminium Housing", process: "CNC Milling", quantity: 25, material: "Aluminium 6082-T6",
+                date: "15 Sep 2026", status: "Quotes Received" },
+            { id: "CH-1002", title: "Stainless Shaft", process: "CNC Turning", quantity: 100, material: "Stainless Steel",
+                date: "30 Sep 2026", status: "Open" },
+            { id: "CH-0998", title: "Prototype Bracket", process: "5-Axis Positional", quantity: 2,
+                material: "Aluminium 7075", date: "20 Aug 2026", status: "In Production" }
+        ];
 
-<div id="loginModal" class="modal"><div class="modal-box">
-<button class="close" onclick="closeLogin()">×</button><h2>CNC-HUB</h2><p class="muted">Access the CNC job exchange.</p>
-<div class="tabs"><button id="customerTab" class="active" onclick="setLoginType('customer')">CNC Customer</button><button id="supplierTab" onclick="setLoginType('supplier')">CNC Supplier</button></div>
-<div class="demo-box"><strong>Demo account</strong><br>Email: <a href="mailto:demo@cnchub.co.uk">demo@cnchub.co.uk</a><br>Password: <strong>demo123</strong><br><br>This demo intentionally keeps the credentials visible so you can test the site. Replace this with secure authentication before launch.</div>
-<form onsubmit="login(event)"><div class="form-group"><label>Email address</label><input id="loginEmail" type="email" value="demo@cnchub.co.uk" required></div><div class="form-group"><label>Password</label><input id="loginPassword" type="password" value="demo123" required></div><button class="btn btn-primary" style="width:100%" type="submit">Login</button></form>
-<p style="text-align:center;font-size:12px;color:var(--muted)">Production registration should use verified email, password hashing, rate limits and server-side sessions.</p>
-</div></div>
+        let quotes = [
+            { job: "CH-1001", supplier: "Verified Manufacturing Partner #1047", region: "East Midlands", price: 1295,
+                days: 9, rating: "4.8", cap: "5-axis positional · ISO 9001", status: "Received" },
+            { job: "CH-1001", supplier: "Verified Manufacturing Partner #1182", region: "West Midlands", price: 1480,
+                days: 7, rating: "4.9", cap: "CNC milling · ISO 9001", status: "Received" },
+            { job: "CH-1001", supplier: "Verified Manufacturing Partner #1264", region: "Yorkshire & Humber", price: 1720,
+                days: 6, rating: "5.0", cap: "5-axis · AS9100", status: "Received" }
+        ];
 
-<div id="toast" class="toast"></div>
+        let orders = [
+            { id: "ORD-2001", job: "Prototype Bracket", supplier: "Verified Manufacturing Partner #1047", value: "£420",
+                progress: 70, status: "In Production" },
+            { id: "ORD-1997", job: "Motor Plate", supplier: "Verified Manufacturing Partner #1182", value: "£1,850",
+                progress: 100, status: "Completed" }
+        ];
 
-<script>
-"use strict";
+        let messages = [
+            { from: "Verified Manufacturing Partner #1047", job: "CH-1001",
+                text: "Can you confirm whether the 25 parts require anodising after machining?", time: "Today" },
+            { from: "CNC-HUB Support", job: "CH-1001",
+                text: "Your job has been matched with suitable manufacturing partners.", time: "Yesterday" }
+        ];
 
-/* CNC-HUB demo front-end.
-   This is deliberately original and self-contained.
-   It is NOT a production authentication/database/payment system. */
+        // ----- HELPERS -----
+        function $(id) { return document.getElementById(id); }
 
-const DEMO_EMAIL="demo@cnchub.co.uk", DEMO_PASSWORD="demo123";
-let loginType="customer";
-let currentUser="Demo CNC Customer";
-let jobs=[
- {id:"CH-1001",title:"Aluminium Housing",process:"CNC Milling",quantity:25,material:"Aluminium 6082-T6",date:"15 Sep 2026",status:"Quotes Received"},
- {id:"CH-1002",title:"Stainless Shaft",process:"CNC Turning",quantity:100,material:"Stainless Steel",date:"30 Sep 2026",status:"Open"},
- {id:"CH-0998",title:"Prototype Bracket",process:"5-Axis Positional",quantity:2,material:"Aluminium 7075",date:"20 Aug 2026",status:"In Production"}
-];
-let quotes=[
- {job:"CH-1001",supplier:"Verified Manufacturing Partner #1047",region:"East Midlands",price:1295,days:9,rating:"4.8",cap:"5-axis positional · ISO 9001",status:"Received"},
- {job:"CH-1001",supplier:"Verified Manufacturing Partner #1182",region:"West Midlands",price:1480,days:7,rating:"4.9",cap:"CNC milling · ISO 9001",status:"Received"},
- {job:"CH-1001",supplier:"Verified Manufacturing Partner #1264",region:"Yorkshire & Humber",price:1720,days:6,rating:"5.0",cap:"5-axis · AS9100",status:"Received"}
-];
-let orders=[
- {id:"ORD-2001",job:"Prototype Bracket",supplier:"Verified Manufacturing Partner #1047",value:"£420",progress:70,status:"In Production"},
- {id:"ORD-1997",job:"Motor Plate",supplier:"Verified Manufacturing Partner #1182",value:"£1,850",progress:100,status:"Completed"}
-];
-let messages=[
- {from:"Verified Manufacturing Partner #1047",job:"CH-1001",text:"Can you confirm whether the 25 parts require anodising after machining?",time:"Today"},
- {from:"CNC-HUB Support",job:"CH-1001",text:"Your job has been matched with suitable manufacturing partners.",time:"Yesterday"}
-];
+        function esc(v) { return String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;",
+                '"': "&quot;", "'": "&#39;" } [c])); }
 
-function $(id){return document.getElementById(id)}
-function openLogin(type){if(type)setLoginType(type);$("loginModal").classList.add("active")}
-function closeLogin(){$("loginModal").classList.remove("active")}
-function setLoginType(type){loginType=type;$("customerTab").classList.toggle("active",type==="customer");$("supplierTab").classList.toggle("active",type==="supplier")}
-function login(e){
- e.preventDefault();
- if($("loginEmail").value.trim().toLowerCase()!==DEMO_EMAIL || $("loginPassword").value!==DEMO_PASSWORD){
-   showToast("For this front-end demo use demo@cnchub.co.uk / demo123."); return;
- }
- closeLogin();$("publicSite").style.display="none";$("portal").classList.add("active");
- currentUser=loginType==="supplier"?"Demo CNC Supplier Account":"Demo CNC Customer Account";
- $("portalName").textContent=currentUser; renderAll(); showPanel("dashboard"); showToast("Demo account signed in.");
-}
-function logout(){$("portal").classList.remove("active");$("publicSite").style.display="block";window.scrollTo(0,0);showToast("Logged out.")}
-function showPublic(){logout()}
-function showPanel(panel){
- document.querySelectorAll(".portal-panel").forEach(x=>x.classList.remove("active"));
- const el=$("panel-"+panel); if(el)el.classList.add("active");
- document.querySelectorAll(".side-btn").forEach(x=>x.classList.remove("active"));
- const btn=document.querySelector('.side-btn[data-panel="'+panel+'"]');if(btn)btn.classList.add("active");
- const titles={dashboard:"CNC Dashboard",jobs:"My CNC Jobs",market:"Matched CNC Work","new-job":"Post CNC Job",quotes:"CNC Quotes",orders:"CNC Orders",messages:"CNC Messages",profile:"CNC Profile"};
- $("portalTitle").textContent=titles[panel]||"CNC Dashboard";
- renderAll();
-}
-function statusClass(s){return s==="Open"?"open":s==="Quotes Received"?"quote":s==="In Production"?"active-status":"complete"}
-function renderJobs(){
- const body=$("jobsTable");body.innerHTML="";
- jobs.forEach(j=>{const tr=document.createElement("tr");tr.innerHTML=`<td><strong>${esc(j.id)}</strong></td><td>${esc(j.title)}</td><td>${esc(j.process)}</td><td>${esc(j.quantity)}</td><td>${esc(j.date)}</td><td><span class="status ${statusClass(j.status)}">${esc(j.status)}</span></td>`;body.appendChild(tr)});
- const db=$("dashboardJobs");db.innerHTML="";
- jobs.slice(0,5).forEach(j=>{const tr=document.createElement("tr");tr.innerHTML=`<td><strong>${esc(j.id)}</strong><br><small>${esc(j.title)}</small></td><td>${esc(j.process)}</td><td>${esc(j.quantity)}</td><td><span class="status ${statusClass(j.status)}">${esc(j.status)}</span></td>`;db.appendChild(tr)});
- $("openJobs").textContent=jobs.filter(j=>j.status==="Open").length;
- $("quoteCount").textContent=quotes.length;
-}
-function renderMarket(){
- const box=$("marketJobs");box.innerHTML="";
- jobs.filter(j=>j.status==="Open"||j.status==="Quotes Received").forEach(j=>{
-  const suitable=j.process.toLowerCase().includes("5-axis")?"5-axis capability matched":"CNC capability matched";
-  const div=document.createElement("div");div.className="supplier-card";
-  div.innerHTML=`<div class="supplier-head"><div><div class="supplier-name">${esc(j.id)} · ${esc(j.title)}</div><div class="muted">${esc(j.process)} · ${esc(j.quantity)} parts · ${esc(j.material)}</div></div><span class="status private">Buyer identity controlled</span></div><p class="muted" style="font-size:12px">${suitable} · UK job · ${esc(j.date)}</p><div class="actions"><button class="btn btn-primary btn-small" onclick="submitDemoQuote('${esc(j.id)}')">Indicate interest</button><button class="btn btn-outline btn-small" onclick="showToast('Technical questions must stay inside CNC-HUB messaging.')">Ask a question</button></div>`;
-  box.appendChild(div);
- });
- if(!box.children.length)box.innerHTML='<div class="panel"><strong>No currently matched jobs.</strong><p class="muted">New opportunities will appear here when a suitable RFQ is available.</p></div>';
-}
-function renderQuotes(){
- const box=$("quotesList");box.innerHTML="";
- quotes.forEach(q=>{
-  const div=document.createElement("div");div.className="quote-card";
-  div.innerHTML=`<div class="quote-top"><div><div class="supplier-name">${esc(q.supplier)} <span class="badge">✓ verified</span></div><div class="quote-meta">${esc(q.region)} · ${esc(q.cap)} · ★ ${esc(q.rating)}</div></div><div class="quote-price">£${q.price.toLocaleString()}</div></div><div class="quote-meta" style="margin-top:7px">${q.days} working days · RFQ ${esc(q.job)}</div><div class="actions"><button class="btn btn-green btn-small" onclick="acceptQuote('${esc(q.supplier)}','${esc(q.job)}',${q.price})">Accept quote</button><button class="btn btn-outline btn-small" onclick="startMessage('${esc(q.job)}','${esc(q.supplier)}')">Message securely</button><button class="btn btn-outline btn-small" onclick="showSupplierPreview('${esc(q.supplier)}')">Capability profile</button></div>`;
-  box.appendChild(div);
- });
-}
-function renderOrders(){
- const body=$("ordersTable");body.innerHTML="";
- orders.forEach(o=>{const tr=document.createElement("tr");tr.innerHTML=`<td><strong>${esc(o.id)}</strong></td><td>${esc(o.job)}</td><td>${esc(o.supplier)}</td><td>${esc(o.value)}</td><td><div style="min-width:100px"><div class="progress"><span style="width:${o.progress}%"></span></div><small>${o.progress}%</small></div></td><td><span class="status ${o.status==="Completed"?"complete":"active-status"}">${esc(o.status)}</span></td>`;body.appendChild(tr)});
-}
-function renderMessages(){
- const box=$("messageList");box.innerHTML="";
- messages.forEach(m=>{const d=document.createElement("div");d.className="chat";d.innerHTML=`<strong>${esc(m.from)}</strong><br><small>${esc(m.job)} · ${esc(m.time)}</small><p style="margin-bottom:0">${esc(m.text)}</p>`;box.appendChild(d)});
- const sel=$("messageJob");sel.innerHTML=jobs.map(j=>`<option value="${esc(j.id)}">${esc(j.id)} · ${esc(j.title)}</option>`).join("");
-}
-function renderAll(){renderJobs();renderMarket();renderQuotes();renderOrders();renderMessages()}
-function createJob(e){
- e.preventDefault();
- const desc=$("jobDescription").value;
- if(hasContactData(desc)){showToast("For privacy, remove phone numbers, email addresses, URLs or direct contact requests from the job description.");return}
- const id="CH-"+(1003+jobs.length);
- const date=$("jobDate").value?new Date($("jobDate").value+"T12:00:00").toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}):"To be confirmed";
- jobs.unshift({id,title:$("jobTitle").value,process:$("jobProcess").value,quantity:Number($("jobQuantity").value),material:$("jobMaterial").value,date,status:"Open"});
- $("newJobForm").reset();$("fileList").textContent="Files are shown locally in this demo only.";
- renderAll();showPanel("jobs");showToast(id+" created. In production, matched suppliers would be notified server-side.");
-}
-$("jobFiles").addEventListener("change",function(){const names=[...this.files].map(f=>f.name);$("fileList").textContent=names.length?names.join(" • "):"No files selected."});
-function submitDemoQuote(jobId){showToast("Interest recorded for "+jobId+". A production backend would create a supplier-side RFQ task here.");}
-function acceptQuote(supplier,job,value){
- orders.unshift({id:"ORD-"+(2002+orders.length),job:job,supplier:supplier,value:"£"+value.toLocaleString(),progress:0,status:"Order created"});
- const q=quotes.find(x=>x.supplier===supplier&&x.job===job);if(q)q.status="Accepted";
- renderAll();showPanel("orders");showToast("Quote accepted. The order is now managed inside CNC-HUB.");
-}
-function startMessage(job,supplier){$("messageJob").value=job;$("messageRecipient").innerHTML=`<option>${esc(supplier)}</option><option>CNC-HUB Support</option>`;showPanel("messages");$("messageText").focus()}
-function sendMessage(){
- const text=$("messageText").value.trim();if(!text){showToast("Please enter a message.");return}
- if(hasContactData(text)){showToast("Message blocked: direct contact details or an off-platform contact request was detected.");return}
- messages.unshift({from:currentUser,job:$("messageJob").value,text,time:"Just now"});$("messageText").value="";renderMessages();showToast("Message sent through CNC-HUB.");
-}
-function showSupplierPreview(name){
- const html=`<strong>${esc(name)}</strong><br><span class="badge">✓ company verified</span> <span class="badge">✓ capability reviewed</span><p class="muted" style="font-size:12px;margin-bottom:0">East Midlands · 5-axis positional · CNC turning · aluminium · stainless · titanium · 1,000 × 600 × 600 mm · typical ±0.01 mm · CMM inspection · ISO 9001 · ★ 4.8/5 from 37 completed jobs.</p>`;
- showToast(strip(html));
-}
-function saveProfile(e){e.preventDefault();showToast("Profile saved. Private contact fields remain private in the intended production design.");}
-function hasContactData(text){
- const t=text.toLowerCase();
- return /(?:\b\d{5,}\b)|(?:\+?\d[\d\s().-]{7,}\d)|(?:[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,})|(?:https?:\/\/|www\.)|(?:\b(?:whatsapp|telegram|signal|call me|email me|contact me directly|phone me)\b)/i.test(t);
-}
-function strip(s){return s.replace(/<[^>]*>/g,"").replace(/\s+/g," ").trim()}
-function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function showToast(msg){const t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove("show"),3600)}
-$("loginModal").addEventListener("click",e=>{if(e.target===$("loginModal"))closeLogin()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLogin()});
-renderAll();
-</script>
+        function strip(s) { return s.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim(); }
+
+        function hasContactData(text) {
+            const t = text.toLowerCase();
+            return /(?:\b\d{5,}\b)|(?:\+?\d[\d\s().-]{7,}\d)|(?:[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,})|(?:https?:\/\/|www\.)|(?:\b(?:whatsapp|telegram|signal|call me|email me|contact me directly|phone me)\b)/i
+                .test(t);
+        }
+
+        function statusClass(s) {
+            if (s === "Open") return "status-open";
+            if (s === "Quotes Received") return "status-quote";
+            if (s === "In Production") return "status-active";
+            if (s === "Completed") return "status-complete";
+            return "status-open";
+        }
+
+        // ----- TOAST -----
+        function showToast(msg) {
+            const t = $("toast");
+            t.textContent = msg;
+            t.classList.add("show");
+            clearTimeout(window.toastTimer);
+            window.toastTimer = setTimeout(() => t.classList.remove("show"), 3600);
+        }
+
+        // ----- LOGIN / LOGOUT -----
+        function openLogin(type) {
+            if (type) setLoginType(type);
+            $("loginModal").classList.add("active");
+        }
+
+        function closeLogin() {
+            $("loginModal").classList.remove("active");
+        }
+
+        function setLoginType(type) {
+            loginType = type;
+            $("customerTab").classList.toggle("active", type === "customer");
+            $("supplierTab").classList.toggle("active", type === "supplier");
+        }
+
+        function login(e) {
+            e.preventDefault();
+            const email = $("loginEmail").value.trim().toLowerCase();
+            const pass = $("loginPassword").value;
+            if (email !== DEMO_EMAIL || pass !== DEMO_PASSWORD) {
+                showToast("For this front-end demo use demo@cnchub.co.uk / demo123.");
+                return;
+            }
+            closeLogin();
+            $("publicSite").style.display = "none";
+            $("portal").classList.add("active");
+            currentUser = loginType === "supplier" ? "Demo CNC Supplier Account" : "Demo CNC Customer Account";
+            $("portalName").textContent = currentUser;
+            renderAll();
+            showPanel("dashboard");
+            showToast("Demo account signed in.");
+        }
+
+        function logout() {
+            $("portal").classList.remove("active");
+            $("publicSite").style.display = "block";
+            window.scrollTo(0, 0);
+            showToast("Logged out.");
+            // close mobile sidebar if open
+            document.getElementById("sidebar").classList.remove("open");
+        }
+
+        function showPublic() {
+            logout();
+        }
+
+        // ----- MOBILE MENU -----
+        function toggleMobileMenu() {
+            const menu = document.getElementById("navMenu");
+            const btn = document.getElementById("mobileMenuBtn");
+            menu.classList.toggle("open");
+            btn.textContent = menu.classList.contains("open") ? "×" : "☰";
+            // close sidebar if open
+            document.getElementById("sidebar").classList.remove("open");
+        }
+
+        // ----- PORTAL NAVIGATION -----
+        function showPanel(panel) {
+            document.querySelectorAll(".portal-panel").forEach(x => x.classList.remove("active"));
+            const el = $("panel-" + panel);
+            if (el) el.classList.add("active");
+
+            document.querySelectorAll(".side-btn").forEach(x => x.classList.remove("active"));
+            const btn = document.querySelector('.side-btn[data-panel="' + panel + '"]');
+            if (btn) btn.classList.add("active");
+
+            const titles = {
+                dashboard: "CNC Dashboard",
+                jobs: "My CNC Jobs",
+                market: "Matched CNC Work",
+                "new-job": "Post CNC Job",
+                quotes: "CNC Quotes",
+                orders: "CNC Orders",
+                messages: "CNC Messages",
+                profile: "CNC Profile"
+            };
+            $("portalTitle").textContent = titles[panel] || "CNC Dashboard";
+            renderAll();
+
+            // close mobile sidebar
+            document.getElementById("sidebar").classList.remove("open");
+        }
+
+        // ----- RENDER FUNCTIONS -----
+        function renderJobs() {
+            const body = $("jobsTable");
+            body.innerHTML = "";
+            jobs.forEach(j => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+              <td><strong>${esc(j.id)}</strong></td>
+              <td>${esc(j.title)}</td>
+              <td>${esc(j.process)}</td>
+              <td>${esc(j.quantity)}</td>
+              <td>${esc(j.date)}</td>
+              <td><span class="status ${statusClass(j.status)}">${esc(j.status)}</span></td>
+            `;
+                body.appendChild(tr);
+            });
+
+            const db = $("dashboardJobs");
+            db.innerHTML = "";
+            jobs.slice(0, 5).forEach(j => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+              <td><strong>${esc(j.id)}</strong><br><small>${esc(j.title)}</small></td>
+              <td>${esc(j.process)}</td>
+              <td>${esc(j.quantity)}</td>
+              <td><span class="status ${statusClass(j.status)}">${esc(j.status)}</span></td>
+            `;
+                db.appendChild(tr);
+            });
+
+            $("openJobs").textContent = jobs.filter(j => j.status === "Open").length;
+            $("quoteCount").textContent = quotes.length;
+        }
+
+        function renderMarket() {
+            const box = $("marketJobs");
+            box.innerHTML = "";
+            const openJobs = jobs.filter(j => j.status === "Open" || j.status === "Quotes Received");
+            if (!openJobs.length) {
+                box.innerHTML =
+                    '<div class="panel"><strong>No currently matched jobs.</strong><p class="muted">New opportunities will appear here when a suitable RFQ is available.</p></div>';
+                return;
+            }
+            openJobs.forEach(j => {
+                const suitable = j.process.toLowerCase().includes("5-axis") ? "5-axis capability matched" :
+                    "CNC capability matched";
+                const div = document.createElement("div");
+                div.className = "supplier-card";
+                div.innerHTML = `
+              <div class="supplier-head">
+                <div>
+                  <div class="supplier-name">${esc(j.id)} · ${esc(j.title)}</div>
+                  <div class="muted">${esc(j.process)} · ${esc(j.quantity)} parts · ${esc(j.material)}</div>
+                </div>
+                <span class="status status-private">Buyer identity controlled</span>
+              </div>
+              <p class="muted" style="font-size:12px">${suitable} · UK job · ${esc(j.date)}</p>
+              <div class="actions">
+                <button class="btn btn-primary btn-small" onclick="submitDemoQuote('${esc(j.id)}')">Indicate interest</button>
+                <button class="btn btn-outline btn-small" onclick="showToast('Technical questions must stay inside CNC-HUB messaging.')">Ask a question</button>
+              </div>
+            `;
+                box.appendChild(div);
+            });
+        }
+
+        function renderQuotes() {
+            const box = $("quotesList");
+            box.innerHTML = "";
+            if (!quotes.length) {
+                box.innerHTML = '<div class="panel"><p class="muted">No quotations yet.</p></div>';
+                return;
+            }
+            quotes.forEach(q => {
+                const div = document.createElement("div");
+                div.className = "quote-card";
+                div.innerHTML = `
+              <div class="quote-top">
+                <div>
+                  <div class="supplier-name">${esc(q.supplier)} <span class="badge">✓ verified</span></div>
+                  <div class="quote-meta">${esc(q.region)} · ${esc(q.cap)} · ★ ${esc(q.rating)}</div>
+                </div>
+                <div class="quote-price">£${q.price.toLocaleString()}</div>
+              </div>
+              <div class="quote-meta" style="margin-top:7px">${q.days} working days · RFQ ${esc(q.job)}</div>
+              <div class="actions">
+                <button class="btn btn-green btn-small" onclick="acceptQuote('${esc(q.supplier)}','${esc(q.job)}',${q.price})">Accept quote</button>
+                <button class="btn btn-outline btn-small" onclick="startMessage('${esc(q.job)}','${esc(q.supplier)}')">Message securely</button>
+                <button class="btn btn-outline btn-small" onclick="showSupplierPreview('${esc(q.supplier)}')">Capability profile</button>
+              </div>
+            `;
+                box.appendChild(div);
+            });
+        }
+
+        function renderOrders() {
+            const body = $("ordersTable");
+            body.innerHTML = "";
+            if (!orders.length) {
+                body.innerHTML =
+                    '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:30px;">No orders yet.</td></tr>';
+                return;
+            }
+            orders.forEach(o => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+              <td><strong>${esc(o.id)}</strong></td>
+              <td>${esc(o.job)}</td>
+              <td>${esc(o.supplier)}</td>
+              <td>${esc(o.value)}</td>
+              <td>
+                <div style="min-width:100px">
+                  <div class="progress"><span style="width:${o.progress}%"></span></div>
+                  <small>${o.progress}%</small>
+                </div>
+              </td>
+              <td><span class="status ${o.status === 'Completed' ? 'status-complete' : 'status-active'}">${esc(o.status)}</span></td>
+            `;
+                body.appendChild(tr);
+            });
+        }
+
+        function renderMessages() {
+            const box = $("messageList");
+            box.innerHTML = "";
+            if (!messages.length) {
+                box.innerHTML = '<div class="panel"><p class="muted">No messages yet.</p></div>';
+                return;
+            }
+            messages.forEach(m => {
+                const d = document.createElement("div");
+                d.className = "chat" + (m.from === currentUser ? " mine" : "");
+                d.innerHTML = `
+              <strong>${esc(m.from)}</strong><br>
+              <small>${esc(m.job)} · ${esc(m.time)}</small>
+              <p style="margin-bottom:0">${esc(m.text)}</p>
+            `;
+                box.appendChild(d);
+            });
+            const sel = $("messageJob");
+            sel.innerHTML = jobs.map(j =>
+                `<option value="${esc(j.id)}">${esc(j.id)} · ${esc(j.title)}</option>`
+            ).join("");
+        }
+
+        function renderAll() {
+            renderJobs();
+            renderMarket();
+            renderQuotes();
+            renderOrders();
+            renderMessages();
+        }
+
+        // ----- CREATE JOB -----
+        function createJob(e) {
+            e.preventDefault();
+            const desc = $("jobDescription").value;
+            if (hasContactData(desc)) {
+                showToast("For privacy, remove phone numbers, email addresses, URLs or direct contact requests from the job description.");
+                return;
+            }
+            const id = "CH-" + (1003 + jobs.length);
+            const dateVal = $("jobDate").value;
+            const date = dateVal ? new Date(dateVal + "T12:00:00").toLocaleDateString("en-GB", { day: "2-digit",
+                month: "short", year: "numeric" }) : "To be confirmed";
+            jobs.unshift({
+                id: id,
+                title: $("jobTitle").value,
+                process: $("jobProcess").value,
+                quantity: Number($("jobQuantity").value),
+                material: $("jobMaterial").value,
+                date: date,
+                status: "Open"
+            });
+            $("newJobForm").reset();
+            $("fileList").textContent = "Files are shown locally in this demo only.";
+            renderAll();
+            showPanel("jobs");
+            showToast(id + " created. In production, matched suppliers would be notified server-side.");
+        }
+
+        // file list display
+        document.getElementById("jobFiles").addEventListener("change", function() {
+            const names = [...this.files].map(f => f.name);
+            document.getElementById("fileList").textContent = names.length ? names.join(" • ") : "No files selected.";
+        });
+
+        // ----- QUOTE / ORDER ACTIONS -----
+        function submitDemoQuote(jobId) {
+            showToast("Interest recorded for " + jobId + ". A production backend would create a supplier-side RFQ task here.");
+        }
+
+        function acceptQuote(supplier, job, value) {
+            orders.unshift({
+                id: "ORD-" + (2002 + orders.length),
+                job: job,
+                supplier: supplier,
+                value: "£" + value.toLocaleString(),
+                progress: 0,
+                status: "Order created"
+            });
+            const q = quotes.find(x => x.supplier === supplier && x.job === job);
+            if (q) q.status = "Accepted";
+            renderAll();
+            showPanel("orders");
+            showToast("Quote accepted. The order is now managed inside CNC-HUB.");
+        }
+
+        function startMessage(job, supplier) {
+            $("messageJob").value = job;
+            $("messageRecipient").innerHTML = `<option>${esc(supplier)}</option><option>CNC-HUB Support</option>`;
+            showPanel("messages");
+            $("messageText").focus();
+        }
+
+        function showSupplierPreview(name) {
+            const html =
+                `<strong>${esc(name)}</strong><br><span class="badge">✓ company verified</span> <span class="badge">✓ capability reviewed</span><p class="muted" style="font-size:12px;margin-bottom:0">East Midlands · 5-axis positional · CNC turning · aluminium · stainless · titanium · 1,000 × 600 × 600 mm · typical ±0.01 mm · CMM inspection · ISO 9001 · ★ 4.8/5 from 37 completed jobs.</p>`;
+            showToast(strip(html));
+        }
+
+        // ----- SEND MESSAGE -----
+        function sendMessage() {
+            const text = $("messageText").value.trim();
+            if (!text) { showToast("Please enter a message."); return; }
+            if (hasContactData(text)) {
+                showToast("Message blocked: direct contact details or an off-platform contact request was detected.");
+                return;
+            }
+            messages.unshift({
+                from: currentUser,
+                job: $("messageJob").value,
+                text: text,
+                time: "Just now"
+            });
+            $("messageText").value = "";
+            renderMessages();
+            showToast("Message sent through CNC-HUB.");
+        }
+
+        // ----- PROFILE -----
+        function saveProfile(e) {
+            e.preventDefault();
+            showToast("Profile saved. Private contact fields remain private in the intended production design.");
+        }
+
+        // ----- EVENT LISTENERS -----
+        document.getElementById("loginModal").addEventListener("click", function(e) {
+            if (e.target === this) closeLogin();
+        });
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") closeLogin();
+        });
+
+        // Close mobile menu on window resize
+        window.addEventListener("resize", function() {
+            if (window.innerWidth > 950) {
+                document.getElementById("navMenu").classList.remove("open");
+                document.getElementById("mobileMenuBtn").textContent = "☰";
+                document.getElementById("sidebar").classList.remove("open");
+            }
+        });
+
+        // Click outside sidebar to close on mobile
+        document.addEventListener("click", function(e) {
+            const sidebar = document.getElementById("sidebar");
+            const menu = document.getElementById("navMenu");
+            const btn = document.getElementById("mobileMenuBtn");
+            if (window.innerWidth <= 950) {
+                if (sidebar.classList.contains("open") && !sidebar.contains(e.target) && e.target !== btn && !btn
+                    .contains(e.target)) {
+                    sidebar.classList.remove("open");
+                }
+                if (menu.classList.contains("open") && !menu.contains(e.target) && e.target !== btn && !btn.contains(e
+                        .target)) {
+                    menu.classList.remove("open");
+                    btn.textContent = "☰";
+                }
+            }
+        });
+
+        // ----- INIT -----
+        renderAll();
+    </script>
+
 </body>
 </html>
